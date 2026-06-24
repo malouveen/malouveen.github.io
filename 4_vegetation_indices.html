@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<!-- Styled to match template_index.html -->
+<html>
+
+  <head>
+    <title>4. Vegetation Indices Analysis</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- ✅ Template CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- making embedding possible-->
+	  <script type="module" src="https://js.arcgis.com/map-components/4.29/arcgis-map-components.esm.js"></script>
+    
+    <style>
+    body {
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;  /* 2 columns */
+      grid-template-rows: 1fr 1fr;     /* 2 rows */
+      height: 100vh;                   /* full screen height */
+      width: 100vw;                    /* full screen width */
+    }
+
+    arcgis-embedded-map {
+      width: 100%;
+      height: 100%;
+    }
+    </style>
+  </head>
+
+  <body class="is-preload">
+
+    <!-- Header (same as template) -->
+    <div id="header">
+
+      <div class="top">
+
+        <!-- Logo -->
+        <div id="logo">
+          <span class="image avatar48">
+            <img src="images/profile.png" alt="" />
+          </span>
+          <h1 id="title">Malou Veen van Wolfswinkel</h1>
+          <p>University College Utrecht</p>
+        </div>
+
+        <!-- Nav -->
+        <nav id="nav">
+          <ul>
+            <li><a href="template_index.html#top"><span class="icon solid fa-home">Home</span></a></li>
+            <li><a href="template_index.html#portfolio"><span class="icon solid fa-th">Portfolio</span></a></li>
+            <li><a href="template_index.html#about"><span class="icon solid fa-user">About Me</span></a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div id="main">
+
+      <!-- Project Section -->
+      <section class="two">
+        <div class="container">
+
+          <header>
+            <h2>Vegetation Indices Analysis</h2>
+            <h4> Monitoring Land Cover Changes</h4>
+          </header>
+
+          <div class="hero-meta">
+            <div class="meta-item">
+              Google Earth Engine
+            </div>
+
+            <div class="meta-item">
+              Colour Composites
+            </div>
+
+            <div class="meta-item">
+              NDVI
+            </div>
+
+            <div class="meta-item">
+              Skill 4
+            </div>
+          </div>
+
+          <p>
+            Though the Amazonian Rainforest is experiencing tree cover gain in some places, it is also losing tree cover in others.
+            Using Google Earth Engine and vegetation indices, I will map vegetation health in the region of the Huallaga river in Peru in both 2018 and 2025.
+            With this, the change in vegetation health is visualized.
+          </p>
+          
+          <div style="
+            display: flex;
+            gap: 20px;
+            margin: 2rem 0;
+            ">
+
+            <img src="images/4_true_2017.png" alt="True Color Composite 2017" style="
+                width: 50%;
+                border-radius: 15px;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            ">
+
+            <img src="images/4_false_2017.png" alt="False Color Composite 2017" style="
+                width: 50%;
+                border-radius: 15px;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            ">
+
+            </div>
+
+          <!-- Content Grid -->
+          <div class="row">
+            <div class="col-12 col-12-mobile">
+              <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+                <h3>Project Overview</h3>
+                <p>
+                  This assignment uses cloudless orthomosaics to generate True colour and False colour composites 
+                  in QGIS. This is done for the year 2017 and 2025. 
+                  For both years the NDVI is computed in QGIS, after which the difference between the two years can be visualized. This will 
+                  indicate the change in vegetation health near the Huallage river of Peru.
+                </p>
+                
+                <h3>Methods</h3>
+                <p>
+                  Cloudless orthomosaics are exported from Google Earth Engine, by selecting a region of interest and running the JavaScript. For both 
+                  2017 and 2025 a time period from the first of january till the 31st of december exported to my Google Drive. The orthomosaics were then imported to QGIS, 
+                  and converted to True colour and False colour composites. The true colour composite was created by setting the RGB bands to 4, 3, 2. The 
+                  false colour composites were created by setting the RGB bands to 8, 4, 3.
+                
+                  The NDVI was calculated using the Raster Calculator and insering the formula decribed below. The symbology was adjusted to clearly visualize the index values.
+                  Finally, the change in NDVI over time was computed with the Raster Calculator by subtracting the NDVI of 2025 from the NDVI of 2017. Thus, a positive value indicates 
+                  a decreate in vegetation health.
+                </p>
+
+                <h3>Theoretical background</h3>
+                <p>
+                  <i>Orthomosaics</i><br>
+                  An orthomosaic is created by a camera that takes many individual overlapping photos and stitches them together. The photos can be taken from a drone or aerial camera. 
+                  Due to this aerial perspective, the photos contain a number of distortions, for example due to tall trees or rocks that are ‘pushed over’ if they are further away from 
+                  the center of the image. These distortions are removed to create the final complete and continuous image representation of map of a proportion of the earth. <br><br>
+
+                  Cloudless composite Orthomosaics can be created by open data when there are enough recordings of the same region. First, you gather multiple high-resolution images of the 
+                  same area from open data (such as Sentinel-2). Then, you use a tool such as QGIS to filter or mask out the clouds in the images and adjust colors for consistency. Finally, 
+                  the clearest parts of all the images are combined into one seamless, colorful map. <br><br>
+
+                  <i>Multispectral Satellite Imagery</i><br>
+                  Multispectral imagery is a type of earth observation data collected by satellites that capture images of an area at several distinct wavelength ranges (spectral bands) of the
+                  electromagnetic spectrum. This includes wavelengths that are not visible to the human eye. A normal photo uses 3 bands: red, green, and blue (RGB). Multispectral imagery goes 
+                  further by recording multiple bands, which also includes near-infrared (NIR), shortwave infrared (SWIR). Recording more bands beside the RGB bands is valuable, as each band 
+                  captures how surfaces reflect light at that specific wavelength. For example, healthy vegetation reflects strongly in the near-infrared band, which is the basis for the NDVI. 
+                  Water absorbs most infrared light, making it appear dark in NIR and SWIR bands. SWIR bands are useful in distinguishing soil types and mineral composition. Also, material in urban areas, 
+                  such as concrete, asphalt and rooftops have distinct spectral signatures allowing for land use classification.<br><br>
+
+                  Multispectral satellite imagery is relevant to sustainable debelopment because it provides detailed and scalable information about Earth’s systems. As mentioned earlier, the multispectral 
+                  sensors are able to capture continuous global data on environmental conditions beyond the human vision, making the monitoring of plant heath, soil moisture or deforestation more accurate. 
+                  Besides this, multispectral satellite imagery has wide applicability over many sustainable development goals. Besides environmental aspects, it can contribute to the optimization of irrigation use 
+                  (SDG 2, zero hunger), the detection of heat islands in cities (SDG 11, sustainable cities). All in all, this method of satellite imagery is a cost-effective too in evidence based policy and planning, 
+                  which will contribute to the progress towards the UN sustainable development goals. <br><br>
+
+                  <i>Sentinel-2</i><br>
+                  An example of a multispectral imagery satellite is Sentinel-2. It’s one main payload is a Multi-Spectral Instrument (MSI). This is a passive system, as it uses an optical sensor that detects natural 
+                  sunlight reflected from the Earth’s surface. As it relies on external energy (the sun), it only works during the day. The MSI measures 13 spectral bands (visible, near-infrared, shortwave infrared) with 
+                  resolutions between 10-60 meters. Sentinel-2 is run by the European Space Agency (ESA) and is a part of a larger Earth Observation Initiative (the Copernicus Programme). <br><br>
+
+                  <i>Vegetation Index</i> <br>
+                  A vegetation index is a numerical value calculated from satellite data to indicate the presence, health or density of vegetation. Healthy plants reflect more near-infrared light and absorb more red light 
+                  (used in photosynthesis). Thus, the measurements from the satellite spectral bands can be used to analyze and monitor vegetation remotely. Examples include the monitoring of crop health and growth, as the 
+                  satellites can detect stress, disease of nutrient deficiencies. It can also be used in detecting droughts, deforestation and land use. Importantly, these measurements can be taken over long periods of time, 
+                  thus allowing for the detection of change. <br><br>
+
+                  The Normalized Difference Vegetation Index (NDVI) is the most used vegetation index for the greenness and health of plants. NDVI images are captured through satellite or drone sensors, of which the RED and 
+                  NIR bands are used in the formula depicted in figure 2. NIR stands for the Near Infra Red band and RED stands for the red band of the satellite or drone. This equation works due to the absorption and reflection 
+                  of RED and NIR by vegetation, as mentioned earlier. The equation outputs a value for the index of a specific area, between -1 and +1.<br><br>
+
+                  The time of year matters when recording a orthomosaic, as vegetation changes with the seasons. The satellite data is able to capture these changes, which affect how the vegetations appears no the NDVI images and classification. 
+                  During the summer, vegetation is often green and dense, while during winters its bare and reveals sub-tree structures. Moreover, the position of the sun changes throughout the seasons, which affects how light is reflected and 
+                  thus may alter measurements. In order to correctly identify change, the orthomosaics must be taken from the same time period, or else the change could occur due to seasonal variation. <br><br>
+                </p>
+        
+                <h3>Results & Findings</h3>
+
+                <!-- Embedded maps -->
+                <div class="grid">
+
+                  <arcgis-embedded-map item-id="ee752295334b4fd0af86e637c3c4a2ba"></arcgis-embedded-map> <!--True 2025-->
+                  <arcgis-embedded-map item-id="a9d6d8863a0649a9b343785b0809d33d"></arcgis-embedded-map> <!--False 2025-->
+                  <arcgis-embedded-map item-id="91cdacb8e5cd4a33bd344192e1623de5"></arcgis-embedded-map> <!--True 2017-->
+                  <arcgis-embedded-map item-id="3debe3abaf564049ad118ff455d5e603"></arcgis-embedded-map> <!--False 2017-->
+
+                </div>
+
+                <p>
+                  The resulting map reveals clear regional inequalities in access to playground swings in The Hague,
+                  with higher accessibility in developed areas and lower accessibility in parts of the city.
+                </p>
+
+                <h3>Reflection</h3>
+                <p>
+                  This project strengthened my understanding of spatial data visualization and cartographic design.
+                  A limitation was the availability and resolution of local datasets.
+                  Future improvements could include more detailed area-specific analysis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Cards -->
+          <div class="card-row">
+            <div class="info-card">
+              <h3>Project Details</h3>
+              <ul>
+                <li><strong>Course:</strong> GIS and Cartography</li>
+                <li><strong>Instructor:</strong> Britta Ricker</li>
+                <li><strong>Date:</strong> 17 June 2026</li>
+                <li><strong>Study Area:</strong> The Hague</li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <h3>Software & Tools</h3>
+              <ul>
+                <li>QGIS</li>
+                <li>ArcGIS Pro</li>
+                <li>Google Earth Engine</li>
+                <li>Python</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <ul class="copyright">
+        <li>&copy; Your Portfolio</li>
+        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      </ul>
+    </div>
+
+    <!-- Scripts (same as template) -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE HTML>
+<!-- Styled to match template_index.html -->
+<html>
+
+  <head>
+    <title>1. Choropleth Map</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- ✅ Template CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- ✅ Leaflet -->
+    <link rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <style>
+    /* Hover info box */
+    .info {
+      padding: 10px 12px;
+      font: 14px/16px Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      border-left: 4px solid #2c7bb6;
+    }
+
+    .info h4 {
+      margin: 0 0 6px;
+      color: #2c3f48;
+      font-size: 14px;
+    }
+
+    /* Legend box */
+    .legend {
+      background: white;
+      padding: 12px 14px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      font-size: 13px;
+      line-height: 18px;
+      color: #333;
+    }
+
+    .legend i {
+      width: 18px;
+      height: 18px;
+      float: left;
+      margin-right: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    /* Legend title */
+    .legend-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #2c3f48;
+    }
+    </style>
+
+  </head>
+
+  <body class="is-preload">
+
+    <!-- Header (same as template) -->
+    <div id="header">
+
+      <div class="top">
+
+        <!-- Logo -->
+        <div id="logo">
+          <span class="image avatar48">
+            <img src="images/profile.png" alt="" />
+          </span>
+          <h1 id="title">Malou Veen van Wolfswinkel</h1>
+          <p>University College Utrecht</p>
+        </div>
+
+        <!-- Nav -->
+        <nav id="nav">
+          <ul>
+            <li><a href="template_index.html#top"><span class="icon solid fa-home">Home</span></a></li>
+            <li><a href="template_index.html#portfolio"><span class="icon solid fa-th">Portfolio</span></a></li>
+            <li><a href="template_index.html#about"><span class="icon solid fa-user">About Me</span></a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div id="main">
+
+      <!-- Project Section -->
+      <section class="two">
+        <div class="container">
+
+          <header>
+            <h2>1. Choropleth Map</h2>
+            <h4> SDG 6: Clean Water and Sanitation</h4>
+          </header>
+
+          <div class="hero-meta">
+            <div class="meta-item">
+              Global
+            </div>
+
+            <div class="meta-item">
+              Skill 2
+            </div>
+
+            <div class="meta-item">
+              Skill 3
+            </div>
+
+            <div class="meta-item">
+              Skill 4
+            </div>
+          </div>
+
+          <p>
+            This project explores global access to safe water services using a choropleth map.
+            The aim is to visualize spatial inequalities and identify regions where access remains limited.
+          </p>
+          
+          <div id="map" style="
+            width: 100%;
+            height: 500px;
+            margin: 2rem 0;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+          "></div>
+
+          <!-- Content Grid -->
+          <div class="row">
+
+            <!-- LEFT COLUMN -->
+            <div class="col-12 col-12-mobile">
+              <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+                <h3>Project Overview</h3>
+                <p>
+                  This project investigates the global distribution of access to safe drinking water.
+                  Using GIS methods, spatial patterns are analyzed to highlight disparities between regions.
+                </p>
+
+                <h3>Methods</h3>
+                <p>
+                  The analysis involved collecting global datasets, processing them in GIS software,
+                  and applying choropleth classification techniques to represent data visually.
+                </p>
+                <ul>
+                  <li>Data collection and preparation</li>
+                  <li>GIS spatial analysis</li>
+                  <li>Classification and cartographic design</li>
+                  <li>Map creation using QGIS</li>
+                </ul>
+
+                <h3>Results & Findings</h3>
+                <p>
+                  The resulting map reveals clear regional inequalities in access to safe water services,
+                  with higher accessibility in developed regions and lower accessibility in parts of Africa and Asia.
+                </p>
+
+                <h3>Reflection</h3>
+                <p>
+                  This project strengthened my understanding of spatial data visualization and cartographic design.
+                  A limitation was the availability and resolution of global datasets.
+                  Future improvements could include more detailed regional analysis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Cards -->
+          <div class="card-row">
+            <div class="info-card">
+              <h3>Project Details</h3>
+              <ul>
+                <li><strong>Course:</strong> GIS and Cartography</li>
+                <li><strong>Instructor:</strong> Britta Ricker</li>
+                <li><strong>Date:</strong> 17 June 2026</li>
+                <li><strong>Study Area:</strong> Global</li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <h3>Software & Tools</h3>
+              <ul>
+                <li>QGIS</li>
+                <li>ArcGIS Pro</li>
+                <li>Google Earth Engine</li>
+                <li>Python</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <ul class="copyright">
+        <li>&copy; Your Portfolio</li>
+        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      </ul>
+    </div>
+
+    <!-- Scripts (same as template) -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script src="Safe_Drinking_Water_2024.js"></script>
+      <script>
+        const map = L.map('map').setView([10, 10], 2);
+
+        // Base map
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; OpenStreetMap'
+        }).addTo(map);
+
+        // Info control (hover box)
+        const info = L.control();
+
+        info.onAdd = function () {
+          this._div = L.DomUtil.create('div', 'info');
+          this.update();
+          return this._div;
+        };
+
+        info.update = function (props) {
+          this._div.innerHTML =
+            '<h4>SDG 6.1.1: Proportion of population using safely managed drinking water services </h4>' +
+            (props
+              ? `<b>${props.nam_en}</b><br/>${props.SDG_Field}% of population`
+              : 'Hover over a country');
+        };
+
+        info.addTo(map);
+
+        // Color scale
+        function getColor(d) {
+          return d > 81 ? '#2c7bb6' :
+                d > 64 ? '#abd9e9' :
+                d > 46 ? '#ffffbf' :
+                d > 28 ? '#fdae61' :
+                d > 0  ? '#d7191c' :
+                          '#bdbdbd';
+        }
+
+        // Style
+        function style(feature) {
+          return {
+            weight: 0.5,
+            color: 'black',
+            fillOpacity: 0.7,
+            fillColor: getColor(feature.properties.SDG_Field)
+          };
+        }
+
+        // Interactions
+        function highlightFeature(e) {
+          const layer = e.target;
+
+          layer.setStyle({
+            weight: 2,
+            color: '#777',
+            fillOpacity: 0.9
+          });
+
+          layer.bringToFront();
+          info.update(layer.feature.properties);
+        }
+
+        function resetHighlight(e) {
+          geojson.resetStyle(e.target);
+          info.update();
+        }
+
+        function zoomToFeature(e) {
+          map.fitBounds(e.target.getBounds());
+        }
+
+        function onEachFeature(feature, layer) {
+          layer.on({
+            mouseover: highlightFeature,
+            mouseout: resetHighlight,
+            click: zoomToFeature
+          });
+        }
+
+        // GeoJSON layer
+        const geojson = L.geoJson(nationData, {
+          style: style,
+          onEachFeature: onEachFeature
+        }).addTo(map);
+
+        // Legend
+        const legend = L.control({ position: 'bottomleft' });
+
+        legend.onAdd = function () {
+          const div = L.DomUtil.create('div', 'info legend');
+          const grades = [0, 28, 46, 64, 81];
+          const labels = [];
+
+          div.innerHTML += '<div class="legend-title">Proportion of Population (%)</div>';
+
+          for (let i = 0; i < grades.length; i++) {
+            let from = grades[i];
+            let to = grades[i + 1];
+
+            labels.push(
+              `<i style="background:${getColor(from + 1)}"></i> 
+              ${from}${to ? '–' + to : '+'}`
+            );
+          }
+
+          labels.push('<i style="background:#bdbdbd"></i> No data');
+
+          div.innerHTML += labels.join('<br>');
+          return div;
+        };
+
+        legend.addTo(map);
+      </script>
+  </body>
+</html>
