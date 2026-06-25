@@ -9,28 +9,6 @@
 
     <!-- ✅ Template CSS -->
     <link rel="stylesheet" href="assets/css/main.css" />
-
-    <!-- making embedding possible-->
-	  <script type="module" src="https://js.arcgis.com/map-components/4.29/arcgis-map-components.esm.js"></script>
-    
-    <style>
-    body {
-      margin: 0;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;  /* 2 columns */
-      grid-template-rows: 1fr 1fr;     /* 2 rows */
-      height: 100vh;                   /* full screen height */
-      width: 100vw;                    /* full screen width */
-    }
-
-    arcgis-embedded-map {
-      width: 100%;
-      height: 100%;
-    }
-    </style>
   </head>
 
   <body class="is-preload">
@@ -61,6 +39,7 @@
       </div>
     </div>
 
+    
     <!-- Main -->
     <div id="main">
 
@@ -89,6 +68,10 @@
             <div class="meta-item">
               Skill 4
             </div>
+
+            <div class="meta-item">
+                argGIS online
+            </div>    
           </div>
 
           <p>
@@ -96,29 +79,17 @@
             Using Google Earth Engine and vegetation indices, I will map vegetation health in the region of the Huallaga river in Peru in both 2018 and 2025.
             With this, the change in vegetation health is visualized.
           </p>
-          
-          <div style="
-            display: flex;
-            gap: 20px;
-            margin: 2rem 0;
-            ">
-
-            <img src="images/4_true_2017.png" alt="True Color Composite 2017" style="
-                width: 50%;
-                border-radius: 15px;
-                box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            ">
-
-            <img src="images/4_false_2017.png" alt="False Color Composite 2017" style="
-                width: 50%;
-                border-radius: 15px;
-                box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            ">
-
-            </div>
 
           <!-- Content Grid -->
-          <div class="row">
+            <div>
+                <img src="images/NDVI_change.png" alt="True Color Composite 2017" style="
+                    width: 100%;
+                    border-radius: 15px;
+                    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+                ">
+            </div>
+
+            <div class="row">
             <div class="col-12 col-12-mobile">
               <div style="max-width: 900px; margin: 0 auto; text-align: left;">
                 <h3>Project Overview</h3>
@@ -139,6 +110,7 @@
                   The NDVI was calculated using the Raster Calculator and insering the formula decribed below. The symbology was adjusted to clearly visualize the index values.
                   Finally, the change in NDVI over time was computed with the Raster Calculator by subtracting the NDVI of 2025 from the NDVI of 2017. Thus, a positive value indicates 
                   a decreate in vegetation health.
+                  The maps were added as interactive maps on this webiste using arcGIS.
                 </p>
 
                 <h3>Theoretical background</h3>
@@ -187,27 +159,82 @@
                 </p>
         
                 <h3>Results & Findings</h3>
+                <h5>True coour and false colour composites</h5>
+                <!--Maps -->
+                <div style="
+                    display: flex;
+                    gap: 20px;
+                    margin: 2rem 0;
+                    ">
 
-                <!-- Embedded maps -->
-                <div class="grid">
+                    <img src="images/4_true_2017.png" alt="True Color Composite 2017" style="
+                        width: 50%;
+                        border-radius: 15px;
+                        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+                    ">
 
-                  <arcgis-embedded-map item-id="ee752295334b4fd0af86e637c3c4a2ba"></arcgis-embedded-map> <!--True 2025-->
-                  <arcgis-embedded-map item-id="a9d6d8863a0649a9b343785b0809d33d"></arcgis-embedded-map> <!--False 2025-->
-                  <arcgis-embedded-map item-id="91cdacb8e5cd4a33bd344192e1623de5"></arcgis-embedded-map> <!--True 2017-->
-                  <arcgis-embedded-map item-id="3debe3abaf564049ad118ff455d5e603"></arcgis-embedded-map> <!--False 2017-->
+                    <img src="images/4_false_2017.png" alt="False Color Composite 2017" style="
+                        width: 50%;
+                        border-radius: 15px;
+                        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+                    ">
+                </div>
+    
+                <div style="
+                    display: flex;
+                    gap: 20px;
+                    margin: 2rem 0;
+                    ">
 
+                    <img src="images/4_true_2025.png" alt="True Color Composite 2017" style="
+                        width: 50%;
+                        border-radius: 15px;
+                        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+                    ">
+
+                    <img src="images/4_false_2025.png" alt="False Color Composite 2017" style="
+                        width: 50%;
+                        border-radius: 15px;
+                        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+                    ">
                 </div>
 
                 <p>
-                  The resulting map reveals clear regional inequalities in access to playground swings in The Hague,
-                  with higher accessibility in developed areas and lower accessibility in parts of the city.
+                    The true colour composites mostly show the area as we would see it with our naked eye. However,
+                    it is clear that is an orthomosaic image, due to the different sections with varying coouring and shading. 
+                    This is more apparent in the 2017 orthmosaic than the 2025 orthomosaic. The false colour composite seems to
+                    have more contrast in the 2017 edition.  
                 </p>
 
+                <h5>NDVI</h5>
+                <div style="
+                    display: flex;
+                    gap: 20px;
+                    margin: 2rem 0;
+                    ">
+
+                    <img src="images/NDVI_2017.png="True Color Composite 2017" style="
+                        width: 50%;
+                        border-radius: 15px;
+                        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+                    ">
+
+                    <img src="images/NDVI_2025.png" alt="False Color Composite 2017" style="
+                        width: 50%;
+                        border-radius: 15px;
+                        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+                    ">
+                </div>
+                Again, the different section are visible in the 2017 map. In both maps, green indicates a high NDVI value,
+                while red indicates a low NDVI value. Patches of red are visible in the north east and south west. This is where the cities are. 
+
+                The change in NDVI is the most interesting to look at. The sections of the 2017 images prohibit us from detecting a clear image. However, 
+                It is important to note that a positive value in the legend indicates a decrease of NDVI value and thus vegetation health. Regions on the 
+                map that have improves are limited, but present. There is clearly a decrease in vegetation health in the south east.
                 <h3>Reflection</h3>
                 <p>
-                  This project strengthened my understanding of spatial data visualization and cartographic design.
-                  A limitation was the availability and resolution of local datasets.
-                  Future improvements could include more detailed area-specific analysis.
+                  This project was very interesting and close to home for me. I was born and grew up in Tarapoto, and always saw many forms of deforestation.
+                  Thus, it slightly surprises me that there has not been very very much loss of vegetation health in the past 10 years.
                 </p>
               </div>
             </div>
@@ -220,8 +247,8 @@
               <ul>
                 <li><strong>Course:</strong> GIS and Cartography</li>
                 <li><strong>Instructor:</strong> Britta Ricker</li>
-                <li><strong>Date:</strong> 17 June 2026</li>
-                <li><strong>Study Area:</strong> The Hague</li>
+                <li><strong>Date:</strong> 25 June 2026</li>
+                <li><strong>Study Area:</strong> Tarapoto, Iquitos</li>
               </ul>
             </div>
 
