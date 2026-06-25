@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<!-- Styled to match template_index.html -->
+<html>
+
+  <head>
+    <title>6. Multi-Criteria Analysis</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- ✅ Template CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+  </head>
+
+  <body class="is-preload">
+
+    <!-- Header (same as template) -->
+    <div id="header">
+
+      <div class="top">
+
+        <!-- Logo -->
+        <div id="logo">
+          <span class="image avatar48">
+            <img src="images/profile.png" alt="" />
+          </span>
+          <h1 id="title">Malou Veen van Wolfswinkel</h1>
+          <p>University College Utrecht</p>
+        </div>
+
+        <!-- Nav -->
+        <nav id="nav">
+          <ul>
+            <li><a href="index.html#top"><span class="icon solid fa-home">Home</span></a></li>
+            <li><a href="index.html#about"><span class="icon solid fa-user">About Me</span></a></li>
+            <li><a href="index.html#portfolio"><span class="icon solid fa-th">Portfolio</span></a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div id="main">
+
+      <!-- Project Section -->
+      <section class="two">
+        <div class="container">
+
+          <header>
+            <h2>Multi-Criteria Analysis</h2>
+            <h4>Assessing the suitability of locations for floating solar parks</h4>
+          </header>
+
+          <div class="hero-meta">
+            <div class="meta-item">
+              Analytical Hiarchy Process 
+            </div>
+
+            <div class="meta-item">
+              Skill 2
+            </div>
+
+            <div class="meta-item">
+              Skill 3
+            </div>
+          </div>
+
+          <p>
+            Multicriteria analysis (MCA) is an important application of GIS. It allows for the evaluation of multiple criteria in order to make a decision. 
+            This way, multiple considerations can be balanced when making decisions when it comes to trade-offs or setting priorities. 
+          </p>
+
+          <!-- Content Grid -->
+          <div class="row">
+
+            <!-- LEFT COLUMN -->
+            <div class="col-12 col-12-mobile">
+              <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+                <h3>Project Overview</h3>
+                <p>
+                    Multicriteria analysis (MCA) is a decision-making tool that allows for the evaluation of multiple criteria in order to make a decision. In this assignment, 
+                    I will introducte the concept and apply it to present a workflow for determining the suitability of locations for floating solar parks in the Netherlands. 
+          
+                </p>
+
+                <h2>Theoretical Background</h2>
+                <i>What is multicriteria analysis?</i>
+                <p>
+                  Multicriteria analysis (MCA) is a decision-making framework suited for solving problems in which multiple, often conflicting, criteria need to be considered. 
+                  The general steps taken in this systematic approach are illustrated in figure 1. <br><br>
+
+                  Consider the example of buying a new car. The future buyer could apply a MCA to make this important decision. Within the first step of the MCA process, the current situation, 
+                  key players and stakeholder in the decision making process are determined. The key player in our example is the buyer. Next, we identify the various alternative solutions to the
+                   problem at hand. Options for the buyer are different types of cars (Skoda Yeti, Suzuki swift, Volkswagen Polo, etc.). The third step is to define the different criteria. A criteria is a 
+                   clear measure to compare the effects or value of an option. For the buyer the criteria may be price, fuel efficiency, environmental impact, or brand reputation. After this, each criteria 
+                   is weighed to reflect their relative importance. This weight indicates the difference between options and how much that difference matters. If all the alternatives differ in price by 50 euros,
+                    the ‘ price’ criterion will not be weighed heavily, it will be of low importance. In the fifth step the weights are averaged, resulting in the values for each option. Each option is then evaluated 
+                    based on these values, resulting in a ranking. The best option will have the highest total value.
+                </p>
+                <div style="
+                  width: 100%;
+                  margin: 2rem 0;
+                ">
+
+                  <img src="images/6_mca_process.png" 
+                      alt="Elevation map"
+                      style="
+                      width: 100%;
+                      border-radius: 15px;
+                      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+                ">
+                </div>
+
+                <i>Value of MCA in GIS</i>
+                <p>
+                  In the context of geoscience, problems of decisions include many different variables or aspects that need to be considered, so MCA can be used to rank different solutions! GIS often deals with different 
+                  layers of spatial data such as land use, soil type, or elevation. This makes MCA valuable in GIS, as it allows the integration of multiple spatial factors and criteria to identify optimal locations or 
+                  solutions for planning, resource management, and decision-making. Thus, MCA makes it possible to go from bulks of raw data to a supported policy decision. <br><br>
+
+                  Types of questions answered by MCA in GIS can concern the suitability of locations for specific land uses, the prioritization of areas for conservation or development, or the assessment of environmental impacts. 
+                  Examples include:
+                  <ul>
+                    <li>Where is the best location for a new facility, given environmental, economic, and social criteria?</li>
+                    <li>Which areas are most suitable for conservation, agriculture, or urban development?</li>
+h </li>
+                  </ul>
+                </p>
+
+                <h2>MCA workflow design</h2>
+                
+                <h3>Reflection</h3>
+                <p>
+                  NO CONFUSION MATRIX
+                  This assignment showed me the potential of publcly available data. I enjoyed visuaizing the elevation of a place I am familiar with, and comparing it to a map of almost 240 years old. 
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Cards -->
+          <div class="card-row">
+            <div class="info-card">
+              <h3>Project Details</h3>
+              <ul>
+                <li><strong>Course:</strong> GIS and Cartography</li>
+                <li><strong>Instructor:</strong> Britta Ricker</li>
+                <li><strong>Date:</strong> 17 June 2026</li>
+                <li><strong>Study Area:</strong> The Hague</li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <h3>Software & Tools</h3>
+              <ul>
+                <li>QGIS</li>
+                <li>ArcGIS Pro</li>
+                <li>Spectral Profile</li>
+                <li>QuickMapServices</li>
+                <li>Google Earth Engine</li>
+                <li>Python</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <ul class="copyright">
+        <li>&copy; Your Portfolio</li>
+        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      </ul>
+    </div>
+
+    <!-- Scripts (same as template) -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+  </body>
+</html>
