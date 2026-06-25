@@ -8,13 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- ✅ Template CSS -->
-    <link rel="stylesheet" href="assets/css/main.css" />
-
-    <!-- making embedding possible-->
-    <script type="module" src="https://js.arcgis.com/map-components/4.29/arcgis-map-components.esm.js"></script>
-    <link rel="stylesheet"
-      href="https://js.arcgis.com/4.29/esri/themes/light/main.css">
-    
+    <link rel="stylesheet" href="assets/css/main.css" />    
     <style>
     body {
       margin: 0;
@@ -172,49 +166,56 @@
 
                 <!-- Embedded maps -->
                 <div class="grid">
-                  <!--True 2025-->
-                  <arcgis-embedded-map 
-                    style="height:600px;width:700px;" 
-                    item-id="ee752295334b4fd0af86e637c3c4a2ba" 
-                    theme="light" heading-enabled legend-enabled 
-                    scroll-enabled time-zone-label-enabled 
-                    center="-76.06632505233958,-5.550235826629163"scale="2311162.217155" 
-                    portal-url="https://uni-utrecht.maps.arcgis.com">
-                  </arcgis-embedded-map>
-                  <!--False 2025-->
-                  <arcgis-embedded-map 
-                    style="height:600px;width:700px;" 
-                    item-id="a9d6d8863a0649a9b343785b0809d33d" 
-                    theme="light" heading-enabled legend-enabled 
-                    scroll-enabled time-zone-label-enabled 
-                    center="-75.96378621335703,-5.539300903496216"scale="2311162.217155" 
-                    portal-url="https://uni-utrecht.maps.arcgis.com">
-                  </arcgis-embedded-map>
-           
-                  <!--True 2017-->
-                  <arcgis-embedded-map 
-                    style="height:600px;width:700px;" 
-                    item-id="91cdacb8e5cd4a33bd344192e1623de5" 
-                    theme="light" heading-enabled legend-enabled share-enabled 
-                    scroll-enabled time-zone-label-enabled 
-                    center="-75.96378621335703,-5.539300903496216"
-                    scale="2311162.217155" portal-url="https://uni-utrecht.maps.arcgis.com">
-                  </arcgis-embedded-map>
 
-                  <!--False 2017-->
-                   <arcgis-embedded-map 
-                    style="height:600px;width:700px;" 
-                    item-id="3debe3abaf564049ad118ff455d5e603" 
-                    theme="light" heading-enabled legend-enabled 
-                    share-enabled scroll-enabled time-zone-label-enabled 
-                    center="-75.96378621335698,-5.539300903496216"scale="2311162.217155" 
-                    portal-url="https://uni-utrecht.maps.arcgis.com">
-                  </arcgis-embedded-map>
+                  <!-- True Colour 2025 -->
+                  <iframe
+                    src="https://www.arcgis.com/apps/Embed/index.html?webmap=ee752295334b4fd0af86e637c3c4a2ba&extent=..."
+                    width="100%"
+                    height="500"
+                    frameborder="0"
+                    allowfullscreen>
+                  </iframe>
+
+                  <!-- False Colour 2025 -->
+                  <iframe
+                    src="https://www.arcgis.com/apps/Embed/index.html?webmap=a9d6d8863a0649a9b343785b0809d33d&extent=..."
+                    width="100%"
+                    height="500"
+                    frameborder="0"
+                    allowfullscreen>
+                  </iframe>
+
+                  <!-- True Colour 2017 -->
+                  <iframe
+                    src="https://www.arcgis.com/apps/Embed/index.html?webmap=91cdacb8e5cd4a33bd344192e1623de5&extent=..."
+                    width="100%"
+                    height="500"
+                    frameborder="0"
+                    allowfullscreen>
+                  </iframe>
+
+                  <!-- False Colour 2017 -->
+                  <iframe
+                    src="https://www.arcgis.com/apps/Embed/index.html?webmap=3debe3abaf564049ad118ff455d5e603&extent=..."
+                    width="100%"
+                    height="500"
+                    frameborder="0"
+                    allowfullscreen>
+                  </iframe>
+
                 </div>
 
-                <!--NDVI change-->
-                <arcgis-embedded-map style="height:600px;width:700px;" item-id="67add1e4744f4b5094cd7c359ca94852" theme="light" heading-enabled legend-enabled scroll-enabled time-zone-label-enabled center="-75.16819289575928,-5.4682189873263"scale="4622324.434309" portal-url="https://uni-utrecht.maps.arcgis.com"></arcgis-embedded-map>
-
+                <!-- NDVI Change Map -->
+                <div class="single-map">
+                  <iframe
+                    src="https://www.arcgis.com/apps/Embed/index.html?webmap=67add1e4744f4b5094cd7c359ca94852&extent=..."
+                    width="100%"
+                    height="600"
+                    frameborder="0"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+                
                 <p>
                   The resulting map reveals clear regional inequalities in access to playground swings in The Hague,
                   with higher accessibility in developed areas and lower accessibility in parts of the city.
