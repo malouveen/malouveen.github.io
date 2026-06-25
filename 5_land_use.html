@@ -32,8 +32,8 @@
         <nav id="nav">
           <ul>
             <li><a href="index.html#top"><span class="icon solid fa-home">Home</span></a></li>
-            <li><a href="index.html#portfolio"><span class="icon solid fa-th">Portfolio</span></a></li>
             <li><a href="index.html#about"><span class="icon solid fa-user">About Me</span></a></li>
+            <li><a href="index.html#portfolio"><span class="icon solid fa-th">Portfolio</span></a></li>
           </ul>
         </nav>
 
@@ -49,28 +49,29 @@
 
           <header>
             <h2>Land Use Classification</h2>
-            <h4> Mapping the Rhynstroom</h4>
+            <h4>Mapping the land use of in the region of the City of Utrecht</h4>
           </header>
 
           <div class="hero-meta">
             <div class="meta-item">
-              Digital Terrain Model 
+              (Un)supervised Classification 
             </div>
 
             <div class="meta-item">
-              Digital Surface Model
+              Training Sample
             </div>
 
             <div class="meta-item">
-              Georeferencing
+              Classification Wizard
             </div>
           </div>
 
           <p>
-            The Dutch Government has every centimetre of the Netherlands mapped in detail.
-            Using this publicly available data, I will compare an old map to modern data in a river natural environment. 
+            The land cover of the Earth is what we see when we look down from the sky. It is the physical material at the surface of the earth. 
+            The manner in which this land is used is called land use, and has a significant influence on the environment. Thus, classifying land cover
+            is an important part of environmental monitoring. 
           </p>
-          
+
           <div style="
             width: 100%;
             margin: 2rem 0;
@@ -93,24 +94,40 @@
               <div style="max-width: 900px; margin: 0 auto; text-align: left;">
                 <h3>Project Overview</h3>
                 <p>
-                  This assignment uses digital elevation models provided by the Dutch government to illustrate the current elevation 
-                  relative to the NAP (Normaal Amsterdamse Pijl). An old map is overlayed to compare the current elevation to the 
-                  drawings of that time.
+                  In this assignemnt, I will generate a land cover classification map for the region of the City of Utrecht, using the data
+                  collected by my classmates and I.
+                </p>
+
+                <h3>Theoretical Background</h3>
+                <i>Automated land cover classification</i>
+                <p>
+                  Classifying land cover in an area used to require on-site data collection. This involves people spending hours determining 
+                  the type of land cover and recording this. With automated land cover classification this process is a lot faster, resulting in more data! 
+                  Two paradigms of classification are supervised and unsupervised classification. The former requires labeled data. This labelled data is 
+                  used as the ‘training data’ to determine patterns, which are then used to classify newly provided data. <br><br>
+                  
+                  Unsupervised classification is used for unlabeled data, the pixel value is unknown. The different classes are based on the natural groupings 
+                  or clusters present in the image values. There are numerous clustering algorithms that can be used to determine the classes, a common form being the K-means approach. 
                 </p>
 
                 <h3>Methods</h3>
                 <p>
-                  The analysis was performed in QGIS version 3.40, in which several steps were taken. First, a region of interest was selected. 
-                  Then, digital elevation models were downloaded. Then, an old map was found, georeferenced, and clipped to the region of interest. 
-                  Using measurement tools in QGIS, the area was determined. In order to visualize the elevation, the DTM layer was given a colour ramp 
-                  and printed to a layout. In this layout, a title, a legend, scale bar, and north direction were added. 
+                  The land cover classification map was generated using the Classification Wizard in ArcGIS Pro. 
+                  The Classification Wizard is a tool that allows you to create a land cover classification map using either supervised or unsupervised classification methods. 
+                  The training samples were collected by my classmates and I during a field trip to the City of Utrecht. A satellite image of the region of interest was added 
+                  to a base map retrieved from QuickMapServices. The training samples were then digitized on top of the satellite image, and I manualy assigned land cover classes to each 
+                  sample using the 'Spectral Profile' tool. The classified land cover types were Forest, Open field, Urban, Water and Agriculture. 
+                  With this, I attempted to create a signiture file.<br><br>
+                  The 'Classification Wizard' tool was used to perform an Unsupervised Pixel Based Classification, an Unsupervised Object Based Classification and a Supervised Pixel Based Classification.
+                  For the supervised classification, the training samples were then used to train the classifier, which was then used to classify the entire study area.
+                  Finally, the NDVI was calculated using the 'Raster Calculator' tool, and the results were compared to the land cover classification map.
                 </p>
 
-                <h3>Region of Interest</h3>
+                <h3>Findings and Results</h3>
+                <i>Spatial Resolution</i>
                 <p>
-                  Inspired by the old map hanging in the Geology Faculty building (figure 1), I have chosen a section of the Rhine-Meuse delta between Arnhem and Nijmegen (figure 2).
-                  In the archives of Utrecht University, a map drawn between 1784 and 1789 was found. The map is titled ‘Kaart van den Rhynstroom’ which translates to ‘Map of the Rhine current’. 
-                  It contains the riverbanks, shallow parts, gravel bed and sand bed and krib beds. 
+                  To determine the spatial resolution of the satellite image, I used the 'Measure' tool in ArcGIS Pro. The width of a pixel was 18 meters, the length 30 meters. This means that the spatial
+                  resolution of the satellite image is 18 meters by 30 meters.
                 </p>
 
                 <div style="
@@ -118,7 +135,7 @@
                   margin: 2rem 0;
                 ">
 
-                  <img src="images/3_ROI.png" 
+                  <img src="images/5_pixel_size.png" 
                       alt="Elevation map"
                       style="
                       width: 100%;
@@ -127,45 +144,57 @@
                 ">
                 </div>
 
-                <h3>An old map of the Rhynstroom</h3>
-                <p>
-                  It is a map of the Rhynstroom, published in 1790. It contains the riverbanks, shallow parts, gravel bed and sand bed and krib beds. 
-                  The measurements for the map were performed by H. van Straalen, J. Engelman, J, Sabrier and F.W. Conrad between 1784 and 1889. 
-                  The map is credited to J. Engelman making him the surveyor, as he compiled the map. The map was commissioned by 
-                  ‘de Heeren Gecommitteerde Raden van de Staten van Holland en Westvriesland’, which is the Executive Council of the States of Holland and West Friesland, 
-                  under the direction of inspector-General C. Brunings. The old map was overlayed diagonally over the new map, as the new map does not use data from Germany. 
-                  The area of the new map is around 210 square meters.
-                </p>
-
+                <i>Spectral Profile</i>
                 <div style="
                   width: 100%;
                   margin: 2rem 0;
                 ">
 
-                  <img src="images/3_oldmap.png" 
+                  <img src="images/5_spectral_profile.png" 
                       alt="Elevation map"
                       style="
                       width: 100%;
                       border-radius: 15px;
                       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-                    ">
+                ">
+
+                </div>
+                <p>
+                  Say something about spectral profile 
+                </p>
+
+                <i>Land Cover Classification</i>
+                <!-- 4x4 Grid with screenshots -->
+                <div class="row">
+                  <div class="col-6 col-12-mobile">
+                    <h4>Unsupervised, Pixel Based</h4>
+                    <span class="image fit">
+                      <img src="images/5_unsupervised_pixel.png" alt="">
+                    </span>
+                  </div>
+
+                  <div class="col-6 col-12-mobile">
+                    <h4>Unsupervised, Object Based</h4>
+                    <span class="image fit">
+                      <img src="images/5_unsupervised_object.png" alt="">
+                    </span>
+                  </div>
+
+                  <div class="col-6 col-12-mobile">
+                    <h4>Supervised, Pixel Based</h4>
+                    <span class="image fit">
+                      <img src="images/5_supervised_pixel.png" alt="">
+                    </span>
+                  </div>
                 </div>
 
-                <h3>Results and Findings</h3>
                 <p>
-                  The map at the top of the page is a digital terrain model (DTM) of the area introduced earlier. A lighter colour indicates a larger elevation; a deep purple indicates the least amount of elevation. 
-                  There are a few things to note. First, the dikes visible in the old map can be recognised in the new map as thin light yellow lines. It is fascinating to me that these are still (mostly) intact almost 240 years later. 
-                  Something that did change is the land use. The old map shows many large fields surrounded by tree lines, while today most of this has been replaced by buildings, very small agricultural fields or industry. 
-                  Notable is also that fort that was visible in the old map, is no longer findable in the satellite images of today. The elevation map does show that the fort location is at a higher elevation than the rest of the surroundings, 
-                  which is expected. Speaking of buildings, there are large areas of low elevation to the east and to the west of the river, in which there are many buildings visible.
-                  This may indicate that in the case of heavy rainfall locally or upstream, these regions may be sensitive to flooding. Finally, it seems that the sections of the river containing cribs have a high elevation value (yellow)
-                  right by the river bank followed by a very thin line of purple, indicating a steep descent. In order to illustrate the elevation of a large area, while still comparing with the old map, I chose for a diagonal design of the final map as shown above. 
-                  An elevation model could not be created for the right hand side of the old map, as German data would be necessary for this. The colours were chosen in a manner that bypasses any unnecessary assumptions (e.g. red, blue or green). 
-                  The deep purple was chosen as the lower elevation as darker colours often spark the association of depth. 
+                  Say something about land cover classification.
                 </p>
 
                 <h3>Reflection</h3>
                 <p>
+                  NO CONFUSION MATRIX
                   This assignment showed me the potential of publcly available data. I enjoyed visuaizing the elevation of a place I am familiar with, and comparing it to a map of almost 240 years old. 
                 </p>
               </div>
@@ -189,6 +218,8 @@
               <ul>
                 <li>QGIS</li>
                 <li>ArcGIS Pro</li>
+                <li>Spectral Profile</li>
+                <li>QuickMapServices</li>
                 <li>Google Earth Engine</li>
                 <li>Python</li>
               </ul>
