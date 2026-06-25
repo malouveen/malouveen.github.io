@@ -2766,3 +2766,16 @@ input, select, textarea {
     grid-template-columns: 1fr;
   }
 }
+
+.map-row-2 iframe {
+  width: 100%;
+  height: 550px; /* increase from default */
+  border: none;
+}
+
+.map-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px; /* smaller gap = wider feel */
+  margin: 20px 0;
+}
