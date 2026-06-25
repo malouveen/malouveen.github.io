@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- ✅ Template CSS -->
-    <link rel="stylesheet" href="assets/css/main.css" />    
+    <link rel="stylesheet" href="assets/css/main.css" />
+
     <style>
     body {
       margin: 0;
@@ -57,6 +58,7 @@
       </div>
     </div>
 
+    
     <!-- Main -->
     <div id="main">
 
@@ -83,8 +85,8 @@
             </div>
 
             <div class="meta-item">
-              Skill 4
-            </div>
+                argGIS online
+            </div>    
           </div>
 
           <p>
@@ -94,7 +96,11 @@
           </p>
 
           <!-- Content Grid -->
-          <div class="row">
+            <div>
+              <iframe width="700" height="600" allow="local-network-access; geolocation" title="NDVI change (2017-2025)" src="https://uni-utrecht.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=67add1e4744f4b5094cd7c359ca94852&theme=light&heading=true&legend=true&center=-75.92848113428431,-4.747829581661126&scale=2311162.217155" ></iframe>
+            </div>
+
+            <div class="row">
             <div class="col-12 col-12-mobile">
               <div style="max-width: 900px; margin: 0 auto; text-align: left;">
                 <h3>Project Overview</h3>
@@ -115,6 +121,7 @@
                   The NDVI was calculated using the Raster Calculator and insering the formula decribed below. The symbology was adjusted to clearly visualize the index values.
                   Finally, the change in NDVI over time was computed with the Raster Calculator by subtracting the NDVI of 2025 from the NDVI of 2017. Thus, a positive value indicates 
                   a decreate in vegetation health.
+                  The maps were added as interactive maps on this webiste using arcGIS.
                 </p>
 
                 <h3>Theoretical background</h3>
@@ -162,70 +169,48 @@
                   thus may alter measurements. In order to correctly identify change, the orthomosaics must be taken from the same time period, or else the change could occur due to seasonal variation. <br><br>
                 </p>
         
-                <h3>Results & Findings</h3>
-
-                <!-- Embedded maps -->
+                <h3>Results and Findings</h3>
+                <h4>True colour and false colour composites</h4>
+                <!--Embedded maps-->
                 <div class="grid">
-
+                  <p>2017</p>
                   <!-- True Colour 2025 -->
-                  <iframe
-                    src="https://www.arcgis.com/apps/Embed/index.html?webmap=ee752295334b4fd0af86e637c3c4a2ba&extent=..."
-                    width="100%"
-                    height="500"
-                    frameborder="0"
-                    allowfullscreen>
-                  </iframe>
-
+                  <iframe width="700" height="600" allow="local-network-access; geolocation" title="True Colour Composite (2025)" src="https://uni-utrecht.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=ee752295334b4fd0af86e637c3c4a2ba&theme=light&heading=true&legend=true&center=-76.58379827316496,-5.09171123890515&scale=1155581.108577" ></iframe>
                   <!-- False Colour 2025 -->
-                  <iframe
-                    src="https://www.arcgis.com/apps/Embed/index.html?webmap=a9d6d8863a0649a9b343785b0809d33d&extent=..."
-                    width="100%"
-                    height="500"
-                    frameborder="0"
-                    allowfullscreen>
-                  </iframe>
-
+                  <iframe width="700" height="600" allow="local-network-access; geolocation" title="False Colour Composite (2025)" src="https://uni-utrecht.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=a9d6d8863a0649a9b343785b0809d33d&theme=light&heading=true&legend=true&center=-75.96378621335703,-5.539300903496216&scale=2311162.217155" ></iframe>
+                  <p>2025</p>
                   <!-- True Colour 2017 -->
-                  <iframe
-                    src="https://www.arcgis.com/apps/Embed/index.html?webmap=91cdacb8e5cd4a33bd344192e1623de5&extent=..."
-                    width="100%"
-                    height="500"
-                    frameborder="0"
-                    allowfullscreen>
-                  </iframe>
-
+                  <iframe width="700" height="600" allow="local-network-access; geolocation" title="True Colour Composite (2017)" src="https://uni-utrecht.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=91cdacb8e5cd4a33bd344192e1623de5&theme=light&heading=true&legend=true&share=true&center=-75.96378621335703,-5.539300903496216&scale=2311162.217155" ></iframe>
                   <!-- False Colour 2017 -->
-                  <iframe
-                    src="https://www.arcgis.com/apps/Embed/index.html?webmap=3debe3abaf564049ad118ff455d5e603&extent=..."
-                    width="100%"
-                    height="500"
-                    frameborder="0"
-                    allowfullscreen>
-                  </iframe>
-
+                  <iframe width="700" height="600" allow="local-network-access; geolocation" title="False Colour Composite (2017)" src="https://uni-utrecht.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=3debe3abaf564049ad118ff455d5e603&theme=light&heading=true&legend=true&share=true&center=-75.96378621335698,-5.539300903496216&scale=2311162.217155" ></iframe>
                 </div>
 
-                <!-- NDVI Change Map -->
-                <div class="single-map">
-                  <iframe
-                    src="https://www.arcgis.com/apps/Embed/index.html?webmap=67add1e4744f4b5094cd7c359ca94852&extent=..."
-                    width="100%"
-                    height="600"
-                    frameborder="0"
-                    allowfullscreen>
-                  </iframe>
-                </div>
-                
                 <p>
-                  The resulting map reveals clear regional inequalities in access to playground swings in The Hague,
-                  with higher accessibility in developed areas and lower accessibility in parts of the city.
+                    The true colour composites mostly show the area as we would see it with our naked eye. However,
+                    it is clear that is an orthomosaic image, due to the different sections with varying coouring and shading. 
+                    This is more apparent in the 2017 orthmosaic than the 2025 orthomosaic. The false colour composite seems to
+                    have more contrast in the 2017 edition.  
                 </p>
 
+                <h5>NDVI</h5>
+                <!--Embedded maps-->
+                <div class="grid">
+                  <p>2017</p>
+                  <iframe width="700" height="600" allow="local-network-access; geolocation" title="NDVI (2017)" src="https://uni-utrecht.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=fcc36df7e34847e291d8008efc07dfa9&theme=light&heading=true&legend=true&center=-75.98575886960703,-5.459105363900049&scale=2311162.217155" ></iframe>
+                  <p>2025</p>
+                  <iframe width="700" height="600" allow="local-network-access; geolocation" title="NDVI (2025)" src="https://uni-utrecht.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=b1f8f48916484cd1aaa8e65cd1eeba64&theme=light&heading=true&legend=true&center=-75.2647810864042,-5.189278651626296&scale=2311162.217155" ></iframe>
+                </div>
+
+                Again, the different section are visible in the 2017 map. In both maps, green indicates a high NDVI value,
+                while red indicates a low NDVI value. Patches of red are visible in the north east and south west. This is where the cities are. 
+
+                The change in NDVI is the most interesting to look at. The sections of the 2017 images prohibit us from detecting a clear image. However, 
+                It is important to note that a positive value in the legend indicates a decrease of NDVI value and thus vegetation health. Regions on the 
+                map that have improves are limited, but present. There is clearly a decrease in vegetation health in the south east.
                 <h3>Reflection</h3>
                 <p>
-                  This project strengthened my understanding of spatial data visualization and cartographic design.
-                  A limitation was the availability and resolution of local datasets.
-                  Future improvements could include more detailed area-specific analysis.
+                  This project was very interesting and close to home for me. I was born and grew up in Tarapoto, and always saw many forms of deforestation.
+                  Thus, it slightly surprises me that there has not been very very much loss of vegetation health in the past 10 years.
                 </p>
               </div>
             </div>
@@ -238,8 +223,8 @@
               <ul>
                 <li><strong>Course:</strong> GIS and Cartography</li>
                 <li><strong>Instructor:</strong> Britta Ricker</li>
-                <li><strong>Date:</strong> 17 June 2026</li>
-                <li><strong>Study Area:</strong> The Hague</li>
+                <li><strong>Date:</strong> 22 June 2026</li>
+                <li><strong>Study Area:</strong> Huallaga river, Peru</li>
               </ul>
             </div>
 
@@ -249,7 +234,6 @@
                 <li>QGIS</li>
                 <li>ArcGIS Pro</li>
                 <li>Google Earth Engine</li>
-                <li>Python</li>
               </ul>
             </div>
           </div>

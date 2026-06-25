@@ -9,6 +9,25 @@
 
     <!-- ✅ Template CSS -->
     <link rel="stylesheet" href="assets/css/main.css" />
+
+    <style>
+    body {
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;  /* 2 columns */
+      grid-template-rows: 1fr 1fr;     /* 2 rows */
+      height: 100vh;                   /* full screen height */
+      width: 100vw;                    /* full screen width */
+    }
+
+    arcgis-embedded-map {
+      width: 100%;
+      height: 100%;
+    }
+    </style>
   </head>
 
   <body class="is-preload">
@@ -155,6 +174,20 @@
                 </p>
         
                 <h3>Results and Findings</h3>
+                <!--Embedded maps-->
+                <div class="grid">
+                <!-- True Colour 2025 -->
+
+                <!-- False Colour 2025 -->
+
+
+                <!-- True Colour 2017 -->
+
+
+                <!-- False Colour 2017 -->
+
+
+                </div>
                 <h4>True colour and false colour composites</h4>
                 <!--Maps -->
                 <p>2017</p>
