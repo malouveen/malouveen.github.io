@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<!-- Styled to match template_index.html -->
+<html>
+
+  <head>
+    <title>5. Land use Classification</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- ✅ Template CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+  </head>
+
+  <body class="is-preload">
+
+    <!-- Header (same as template) -->
+    <div id="header">
+
+      <div class="top">
+
+        <!-- Logo -->
+        <div id="logo">
+          <span class="image avatar48">
+            <img src="images/profile.png" alt="" />
+          </span>
+          <h1 id="title">Malou Veen van Wolfswinkel</h1>
+          <p>University College Utrecht</p>
+        </div>
+
+        <!-- Nav -->
+        <nav id="nav">
+          <ul>
+            <li><a href="index.html#top"><span class="icon solid fa-home">Home</span></a></li>
+            <li><a href="index.html#portfolio"><span class="icon solid fa-th">Portfolio</span></a></li>
+            <li><a href="index.html#about"><span class="icon solid fa-user">About Me</span></a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div id="main">
+
+      <!-- Project Section -->
+      <section class="two">
+        <div class="container">
+
+          <header>
+            <h2>Land Use Classification</h2>
+            <h4> Mapping the Rhynstroom</h4>
+          </header>
+
+          <div class="hero-meta">
+            <div class="meta-item">
+              Digital Terrain Model 
+            </div>
+
+            <div class="meta-item">
+              Digital Surface Model
+            </div>
+
+            <div class="meta-item">
+              Georeferencing
+            </div>
+          </div>
+
+          <p>
+            The Dutch Government has every centimetre of the Netherlands mapped in detail.
+            Using this publicly available data, I will compare an old map to modern data in a river natural environment. 
+          </p>
+          
+          <div style="
+            width: 100%;
+            margin: 2rem 0;
+          ">
+
+            <img src="images/3_elevation.png" 
+                alt="Elevation map"
+                style="
+                    width: 100%;
+                    border-radius: 15px;
+                    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+                ">
+          </div>
+
+          <!-- Content Grid -->
+          <div class="row">
+
+            <!-- LEFT COLUMN -->
+            <div class="col-12 col-12-mobile">
+              <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+                <h3>Project Overview</h3>
+                <p>
+                  This assignment uses digital elevation models provided by the Dutch government to illustrate the current elevation 
+                  relative to the NAP (Normaal Amsterdamse Pijl). An old map is overlayed to compare the current elevation to the 
+                  drawings of that time.
+                </p>
+
+                <h3>Methods</h3>
+                <p>
+                  The analysis was performed in QGIS version 3.40, in which several steps were taken. First, a region of interest was selected. 
+                  Then, digital elevation models were downloaded. Then, an old map was found, georeferenced, and clipped to the region of interest. 
+                  Using measurement tools in QGIS, the area was determined. In order to visualize the elevation, the DTM layer was given a colour ramp 
+                  and printed to a layout. In this layout, a title, a legend, scale bar, and north direction were added. 
+                </p>
+
+                <h3>Region of Interest</h3>
+                <p>
+                  Inspired by the old map hanging in the Geology Faculty building (figure 1), I have chosen a section of the Rhine-Meuse delta between Arnhem and Nijmegen (figure 2).
+                  In the archives of Utrecht University, a map drawn between 1784 and 1789 was found. The map is titled ‘Kaart van den Rhynstroom’ which translates to ‘Map of the Rhine current’. 
+                  It contains the riverbanks, shallow parts, gravel bed and sand bed and krib beds. 
+                </p>
+
+                <div style="
+                  width: 100%;
+                  margin: 2rem 0;
+                ">
+
+                  <img src="images/3_ROI.png" 
+                      alt="Elevation map"
+                      style="
+                      width: 100%;
+                      border-radius: 15px;
+                      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+                ">
+                </div>
+
+                <h3>An old map of the Rhynstroom</h3>
+                <p>
+                  It is a map of the Rhynstroom, published in 1790. It contains the riverbanks, shallow parts, gravel bed and sand bed and krib beds. 
+                  The measurements for the map were performed by H. van Straalen, J. Engelman, J, Sabrier and F.W. Conrad between 1784 and 1889. 
+                  The map is credited to J. Engelman making him the surveyor, as he compiled the map. The map was commissioned by 
+                  ‘de Heeren Gecommitteerde Raden van de Staten van Holland en Westvriesland’, which is the Executive Council of the States of Holland and West Friesland, 
+                  under the direction of inspector-General C. Brunings. The old map was overlayed diagonally over the new map, as the new map does not use data from Germany. 
+                  The area of the new map is around 210 square meters.
+                </p>
+
+                <div style="
+                  width: 100%;
+                  margin: 2rem 0;
+                ">
+
+                  <img src="images/3_oldmap.png" 
+                      alt="Elevation map"
+                      style="
+                      width: 100%;
+                      border-radius: 15px;
+                      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+                    ">
+                </div>
+
+                <h3>Results and Findings</h3>
+                <p>
+                  The map at the top of the page is a digital terrain model (DTM) of the area introduced earlier. A lighter colour indicates a larger elevation; a deep purple indicates the least amount of elevation. 
+                  There are a few things to note. First, the dikes visible in the old map can be recognised in the new map as thin light yellow lines. It is fascinating to me that these are still (mostly) intact almost 240 years later. 
+                  Something that did change is the land use. The old map shows many large fields surrounded by tree lines, while today most of this has been replaced by buildings, very small agricultural fields or industry. 
+                  Notable is also that fort that was visible in the old map, is no longer findable in the satellite images of today. The elevation map does show that the fort location is at a higher elevation than the rest of the surroundings, 
+                  which is expected. Speaking of buildings, there are large areas of low elevation to the east and to the west of the river, in which there are many buildings visible.
+                  This may indicate that in the case of heavy rainfall locally or upstream, these regions may be sensitive to flooding. Finally, it seems that the sections of the river containing cribs have a high elevation value (yellow)
+                  right by the river bank followed by a very thin line of purple, indicating a steep descent. In order to illustrate the elevation of a large area, while still comparing with the old map, I chose for a diagonal design of the final map as shown above. 
+                  An elevation model could not be created for the right hand side of the old map, as German data would be necessary for this. The colours were chosen in a manner that bypasses any unnecessary assumptions (e.g. red, blue or green). 
+                  The deep purple was chosen as the lower elevation as darker colours often spark the association of depth. 
+                </p>
+
+                <h3>Reflection</h3>
+                <p>
+                  This assignment showed me the potential of publcly available data. I enjoyed visuaizing the elevation of a place I am familiar with, and comparing it to a map of almost 240 years old. 
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Cards -->
+          <div class="card-row">
+            <div class="info-card">
+              <h3>Project Details</h3>
+              <ul>
+                <li><strong>Course:</strong> GIS and Cartography</li>
+                <li><strong>Instructor:</strong> Britta Ricker</li>
+                <li><strong>Date:</strong> 17 June 2026</li>
+                <li><strong>Study Area:</strong> The Hague</li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <h3>Software & Tools</h3>
+              <ul>
+                <li>QGIS</li>
+                <li>ArcGIS Pro</li>
+                <li>Google Earth Engine</li>
+                <li>Python</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <ul class="copyright">
+        <li>&copy; Your Portfolio</li>
+        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      </ul>
+    </div>
+
+    <!-- Scripts (same as template) -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+  </body>
+</html>
