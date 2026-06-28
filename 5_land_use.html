@@ -9,7 +9,6 @@
 
     <!-- ✅ Template CSS -->
     <link rel="stylesheet" href="assets/css/main.css" />
-
   </head>
 
   <body class="is-preload">
@@ -32,6 +31,7 @@
         <nav id="nav">
           <ul>
             <li><a href="index.html#top"><span class="icon solid fa-home">Home</span></a></li>
+            <li><a href="index.html#introduction"><span class="icon solid fa-book">Introduction</span></a></li>
             <li><a href="index.html#about"><span class="icon solid fa-user">About Me</span></a></li>
             <li><a href="index.html#portfolio"><span class="icon solid fa-th">Portfolio</span></a></li>
           </ul>
@@ -78,20 +78,43 @@
             <!-- LEFT COLUMN -->
             <div class="col-12 col-12-mobile">
               <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+
+                <!--Navigate to esri course information-->
+                <a href="#esri-course" style="
+                  display: block;
+                  width: 100%;
+                  text-align: center;
+                  padding: 1rem 0;
+                  margin: 2rem 0;
+                  background: white;
+                  color: black;
+                  text-decoration: none;
+                  border-radius: 50px;
+                  font-weight: 600;
+                  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                  transition: all 0.2s ease;
+                "
+                onmouseover="this.style.background='#f5f5f5'; this.style.transform='scale(1.01)'"
+                onmouseout="this.style.background='white'; this.style.transform='scale(1)'">
+                  <i>As a preparation for this assignment, I completed an Esri course. </i><br>
+                  ↓ Jump to course details and certificate
+                </a>
+
                 <h3>Project Overview</h3>
                 <p>
-                  In this assignemnt, I will generate a land cover classification map for the region of the City of Utrecht, using the data
+                  In this assignment, I will generate a land cover classification map for the region of the City of Utrecht, using the data
                   collected by my classmates and I.
                 </p>
 
                 <h3>Theoretical Background</h3>
-                <i>Automated land cover classification</i>
+                <u>Automated land cover classification</u>
                 <p>
                   Classifying land cover in an area used to require on-site data collection. This involves people spending hours determining 
                   the type of land cover and recording this. With automated land cover classification this process is a lot faster, resulting in more data! 
                   Two paradigms of classification are supervised and unsupervised classification. The former requires labeled data. This labelled data is 
                   used as the ‘training data’ to determine patterns, which are then used to classify newly provided data. <br><br>
-                  
+
+                <u>Supervised versus Unsupervised Classification</u><br>
                   Unsupervised classification is used for unlabeled data, the pixel value is unknown. The different classes are based on the natural groupings 
                   or clusters present in the image values. There are numerous clustering algorithms that can be used to determine the classes, a common form being the K-means approach. 
                 </p>
@@ -101,36 +124,34 @@
                   The land cover classification map was generated using the Classification Wizard in ArcGIS Pro. 
                   The Classification Wizard is a tool that allows you to create a land cover classification map using either supervised or unsupervised classification methods. 
                   The training samples were collected by my classmates and I during a field trip to the City of Utrecht. A satellite image of the region of interest was added 
-                  to a base map retrieved from QuickMapServices. The training samples were then digitized on top of the satellite image, and I manualy assigned land cover classes to each 
+                  to a base map retrieved from QuickMapServices. The training samples were then digitized on top of the satellite image, and I manually assigned land cover classes to each 
                   sample using the 'Spectral Profile' tool. The classified land cover types were Forest, Open field, Urban, Water and Agriculture. 
-                  With this, I attempted to create a signiture file.<br><br>
+                  With this, I attempted to create a signature file.<br><br>
                   The 'Classification Wizard' tool was used to perform an Unsupervised Pixel Based Classification, an Unsupervised Object Based Classification and a Supervised Pixel Based Classification.
                   For the supervised classification, the training samples were then used to train the classifier, which was then used to classify the entire study area.
                   Finally, the NDVI was calculated using the 'Raster Calculator' tool, and the results were compared to the land cover classification map.
                 </p>
 
                 <h3>Findings and Results</h3>
-                <i>Spatial Resolution</i>
-                <p>
-                  To determine the spatial resolution of the satellite image, I used the 'Measure' tool in ArcGIS Pro. The width of a pixel was 18 meters, the length 30 meters. This means that the spatial
-                  resolution of the satellite image is 18 meters by 30 meters.
-                </p>
+                <div style="display: flex; align-items: flex-start; gap: 2rem; margin: 2rem 0;">
+                  <!-- LEFT: text -->
+                  <div style="flex: 1;">
+                    <u>Spatial Resolution</u>
+                    <p>
+                      To determine the spatial resolution of the satellite image, I used the 'Measure' tool in ArcGIS Pro. The width of a pixel was 18 meters, the length 30 meters. This means that the spatial
+                      resolution of the satellite image is 18 meters by 30 meters.
+                    </p>
+                  </div>
 
-                <div style="
-                  width: 100%;
-                  margin: 2rem 0;
-                ">
-
-                  <img src="images/5_pixel_size.png" 
-                      alt="Elevation map"
-                      style="
-                      width: 100%;
-                      border-radius: 15px;
-                      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-                ">
+                  <!-- RIGHT: image -->
+                  <div style="flex: 0 0 300px;">
+                    <img src="images/5_pixel_size.png"
+                        alt="Elevation map"
+                        style="width: 100%; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.2);">
+                  </div>
                 </div>
 
-                <i>Spectral Profile</i>
+                <u>Spectral Profile</u>
                 <div style="
                   width: 100%;
                   margin: 2rem 0;
@@ -146,30 +167,30 @@
 
                 </div>
                 <p>
-                  Say something about spectral profile 
+                  The spectral profile was created by selecting areas containing one type of land cover, of which the spectral information of all bands 
+                  are then represented in a chart format. Each band is a range of wavelengths. Thus, the higher the value on the y-axis for a band on 
+                  the x-axis, the stronger the reflectance of that surface within that specific wavelength. For example, open field has the highest value 
+                  at band 11, which means that open fields emit the strongest out of all land cover types for the wavelength range associated with band 11 (Esri, n.d.).
                 </p>
 
-                <i>Land Cover Classification</i>
+                <u>Land Cover Classification</u>
                 <!-- 4x4 Grid with screenshots -->
                 <div class="row">
                   <div class="col-6 col-12-mobile">
-                    <h4>Unsupervised, Pixel Based</h4>
                     <span class="image fit">
-                      <img src="images/5_unsupervised_pixel.png" alt="">
+                      <img src="images/5_unsub_pix.png" alt="">
                     </span>
                   </div>
 
                   <div class="col-6 col-12-mobile">
-                    <h4>Unsupervised, Object Based</h4>
                     <span class="image fit">
-                      <img src="images/5_unsupervised_object.png" alt="">
+                      <img src="images/5_unsub_obj.png" alt="">
                     </span>
                   </div>
 
-                  <div class="col-6 col-12-mobile">
-                    <h4>Supervised, Pixel Based</h4>
+                  <div class="col-12 col-12-mobile">
                     <span class="image fit">
-                      <img src="images/5_supervised_pixel.png" alt="">
+                      <img src="images/5_sup_pix.png" alt="">
                     </span>
                   </div>
                 </div>
@@ -182,7 +203,36 @@
                   a segmentation algorithm to group pixels into objects, which can result in loss of detail.
                 </p>
 
-                <i>NDVI</i>
+                <h3>Review of the classification methods</h3>
+                <p>
+                  <u>Strengths and weaknesses</u><br>
+                  Unsupervised classification does not require training data, which is very useful when ground truth data is scarce or unavailable.
+                  As it requires minimal user input, it can be used for preprocessing. Specifically the pixel based variant classifies each pixel individually, 
+                  allowing it to capture fine spatial details, such as narrow water bodies or small vegetation patches. However, the downside of this method 
+                  is occurrence of misclassification. Pixels with similar spectral signatures may be grouped incorrectly, such as bare soil and concrete. <br>
+                  Unsupervised object based classification groups neighboring pixels into objects before it classifies them, which produces smoother land-cover boundaries. 
+                  This makes it very applicable in representing large landscape features. A weakness of this method is the oversimplification of heterogenous areas.<br>
+
+                  Finally, the strengths of supervised pixel based classification is the accuracy of the classification due to the training samples. It is able to 
+                  distinguish water bodies, forests, urban areas and many other classes at a detailed level due to the pixel-by-pixel classification. Moreover, it is better at 
+                  separating classes with similar spectral characteristics than unsupervised classification techniques. Its main weakness, however, is the heavy dependence
+                  on the representativeness and quality of the training samples. If the training data are insufficient or overlapping, misclassification can occur.<br><br>
+
+
+                  <u>Unique insights</u><br>
+                   The unsupervised pixel based classification was able to detect subtle variations in the city center between 'water' and 'forest'. These class titles are 
+                   completely incorrect, but this variation does indicate mixed land cover, which was not identified as clearly in the object based variant. <br>
+                   The object based classification does provide a unique insight of its own, namely that is clearly highlights the areas where one land cover type is dominant
+                   (urban in the city center, forest in the east). Out of the three methods, the supervised pixel based classification provides the clearest representation of the land cover,
+                   with an urban patch in the southwest, forest in the northeast, agriculture in the south and southeast, and water bodies accurately following rivers and lakes. <br><br>
+
+                  <u>Anomalies in the data</u><br>
+                  The biggest anomalies in the classification of the unsupervised classification is that the roads and rivers are not recognized as individual categories but rather 
+                  grouped with another class. The supervised classification looks quite okay, except for the fact that some agricultural fields are classed as open fields. However, these 
+                  two classes can be similar, as a farmer may have crop fields and open fields for cows.
+                </p>
+
+                <u>NDVI</u>
                 <div style="
                   width: 100%;
                   margin: 2rem 0;
@@ -206,16 +256,78 @@
                   people with colour blindness.
                 </p>
 
+                
+                <h3>ESRI course as preparation</h3>
+                <div id="esri-course" style="display: flex; align-items: flex-start; gap: 2rem; margin: 2rem 0;">
+                  <!-- LEFT: text -->
+                  <div style="flex: 1;">
+                    <p>
+                      To learn how to create supervised classifications in arcGIS Pro, I followed the Esri course <i>Performing Supervised Pixel Based Image Classification</i><br>
+                      The course introduced the Esri Classifier Definition, which is used to classify the rest of the pixels through training samples. It described the requirements of 
+                      proper signature files, and the evaluation of training samples. The workflow for supervised pixel-based classification that was implemented is shown in the graphic below. 
+
+                    </p>
+                  </div>
+
+                  <!-- RIGHT: image -->
+                  <div style="flex: 0 0 500px;">
+                    <img src="images/5_certificate.png"
+                        alt="Certificate map"
+                        style="width: 100%; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.2);">
+                    <img src="images/5_workflow.png"
+                        alt="workflow diagram"
+                        style="width: 100%; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.2);">
+                  </div>
+                </div>
+
+                <p>
+                By adjusting the colour bands, the true colour and false colour composites were created of the region of interest (in Portland).
+                Using the Classification Wizard, the pixels were classified in a supervised, pixel-based manner. Then, I trained the classifier using 
+                the 'random trees' classifier. The output was a map in which the pixel classification could be viewed by the colour indication, or by 
+                clicking on a specific area.
+                </p>
+
+                <div style="
+                  width: 100%;
+                  margin: 2rem 0;
+                ">
+
+                  <img src="images/5_tutorial_map.png" 
+                      alt="tutorial map"
+                      style="
+                      width: 100%;
+                      border-radius: 15px;
+                      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+                ">
+                </div>
+
+
                 <h3>Reflection</h3>
                 <p>
-                  NO CONFUSION MATRIX
+                  This was my first introduction to arcGIS Pro, and from what I have seen in this single assignment, it seems comparable to QGIS, yet different
+                  enough to need practice in both. It was frustrating at times to find out where the buttons were located, especially when I knew exactly where to 
+                  find it in QGIS. At some point I did wonder if it would be possible to merge the two software into one. I do realise however that this is not 
+                  very realistic seen as they are competing business models, arcGIS is closed source (code controlled by Esri) and QGIS is open source and other user expectations.
+                  Personally, I prefer QGIS.<br>
+                  I enjoyed making the maps in this assignment, as they are of an area very familiar to me (I live in Utrecht). Seeing the city in this way put it into
+                  a different perspective, Google Maps can't compare. I found it interesting how the unsupervised classifications were still able to do a semi-good job at distinguishing 
+                  different land cover types. At times, it was difficult to give the classes a name, as they unsupervised classifier grouped things together which should not have been grouped. It was not able
+                  to detect water as an individual class, for example. <br><br>
 
-                  Question 10: What are the strengths and weaknesses of each of the methods you tried and shared above? What unique insight did you find from each? Were there any anomalies in the data?	5
+                  I appreciated the Esri course, due to its clear instructions and relatively wide range of covered concepts.
+                  Having done the course, performing the analysis on the data collected by my class was significantly easier. 
+                  
+
+                  
 
                   I couldnt manage to upload to arcgis online due to an errors concerning the layer type, and input exceeding operating system limit. 
 
                   This assignment showed me the potential of publcly available data. I enjoyed visuaizing the elevation of a place I am familiar with, and comparing it to a map of almost 240 years old. 
                 </p>
+
+                <h3>References</h3>
+                Esri. (n.d.). Spectral profile chart.<a href="https://doc.esri.com/en/arcgis-pro/latest/help/data/imagery/spectral-profile-chart.html"> https://doc.esri.com/en/arcgis-pro/latest/help/data/imagery/spectral-profile-chart.html</a>
+
               </div>
             </div>
           </div>
@@ -227,8 +339,8 @@
               <ul>
                 <li><strong>Course:</strong> GIS and Cartography</li>
                 <li><strong>Instructor:</strong> Britta Ricker</li>
-                <li><strong>Date:</strong> 17 June 2026</li>
-                <li><strong>Study Area:</strong> The Hague</li>
+                <li><strong>Date:</strong> 23 June 2026</li>
+                <li><strong>Study Area:</strong> Utrecht</li>
               </ul>
             </div>
 
@@ -236,11 +348,11 @@
               <h3>Software & Tools</h3>
               <ul>
                 <li>QGIS</li>
-                <li>ArcGIS Pro</li>
+                <li>ArcGIS Pro 3.4</li>
+                <li>ArcGIS Spatial Analyst</li>
                 <li>Spectral Profile</li>
                 <li>QuickMapServices</li>
                 <li>Google Earth Engine</li>
-                <li>Python</li>
               </ul>
             </div>
           </div>

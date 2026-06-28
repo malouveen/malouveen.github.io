@@ -29,8 +29,9 @@
 						<nav id="nav">
 							<ul>
 								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Home</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
+								<li><a href="#introduction" id="introduction-link"><span class="icon solid fa-book">Introduction</span></a></li>
 								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
+								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
 								<!-- <li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li> -->
 							</ul>
 						</nav>
@@ -61,6 +62,73 @@
 						</div>
 					</section>
 
+					<!--Introduction-->
+					<section id="introduction" class="three" style="text-align:left;">
+						<div class="container" >
+
+							<header>
+								<h2>Introduction</h2>
+							</header>
+							<u>
+								Defining GIScience and GIS
+							</u>
+							<p>
+								<i>Geographic Information Science (GIScience)</i> is the theoretical and scientific foundation behind geographic data. 
+								It studies how spatial data is collected, structured, analyzed, and interpreted, and thus answers questions about 
+								spatial patterns.<br><br>
+							
+								<i>Geographic Information Systems (GIS)</i> are the practical tools and software used to apply GIScience. 
+								GIS allows users to store, manage, visualize, and analyze spatial data through maps and models.<br><br>
+
+								GIS allows us to solve complex problems by overlaying multiple layers of spatial data and analysing the their relationships.
+								Techniques for this include buffering, spatial interpolation, classification and, overlay analysis. GIS is specifically useful 
+								as a tool due to its ability to combine vector data, such as points, lines, and polygons, with raster data, such as grids and sattelite images.
+								For example, GIS can be used in disaster management, for predicting flood risk using elevation data and hydrological models. 
+							</p>
+
+							<u>Course Modules and results</u>
+							<p>
+								This course in <i>Georgraphical Information Systems (GIS)</i> introduced the principles and 
+								practical applications of spatial data analysis. Throughout the labs, I learned how to collect,
+								process, analyze, and visualize geographic data. These skills are highly relevant today, as such analyses
+								can be applied to complex challenges such as climate change and urban planning.
+								Each assignment concerned a new GIS tool, concept or method, allowing me to develop a variety of skills.
+
+								<ul>
+									<li>
+										<i>1. Choropleth Map</i>: Visualizing access to safe drinking water using a choropleth map. The resulting map 
+										showed six countries of which less than 25% of the population had access to safe drinking water services.
+									</li>
+									<br>
+									<li>
+										<i>2. Vector Data Analysis</i>: Applying vector analysis techniques to illustrate the accessibility of playground swings in the Hague
+										and varying perceptions of greenness between men and women in Utrecht. The resulting maps revealed a discrepancy in swing accesibility and 
+										a lack of variability in the greenness score between men and women. 
+									</li>
+									<br>
+									<li>
+										<i>3. Digital Elevation models</i>: Comparing a historical map with current elevation data (raster data) in the Rhine-Meuse delta.
+										The resulting map showed landscape changes.
+									</li>
+									<br>
+									<li>
+										<i>4. Vegetation Indices</i>: Using remote sensing data to calculate vegetation indices such as NDVI (Normalized Difference Vegetation Index) in the Huallaga River region in Peru.
+										The resulting map showed slight decreases and increases in vegetation health between 2017 and 2025. Using remote sensing data is valuable for ecosystem monitoring and detecting environmental change.
+									</li>
+									<br>
+									<li>
+										<i>5. Land Use Classification</i>: Using supervised and unsupervised classification techniques to catergorize land cover types in Utrecht, from satellite imagery.
+										Supervised pixel based classification was able to classify the land cover types most accurately.
+									</li>
+									<br>
+									<li>
+										<i>6. Multi-criteria Analysis</i>: Designing a multi-criteria analysis workflow to identify suitable locations for floating solar panels in the Netherlands. The final suitability map would 
+										highlight the optimal locations, demonstrating how GIS supports the process of complex decision making with multipe variables.
+									</li>
+							</p>
+						</div>
+					</section>
+
 					<!-- About Me -->
 					<section id="about" class="three">
 						<div class="container">
@@ -69,15 +137,19 @@
 								<h2>About Me</h2>
 							</header>
 
-							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
+							<div class="about-flex">
+								<img src="images/profile.png" alt="" class="about-img" />
 
-							<p>
-								My name is Malou Veen van Wolfswinkel and I am currently a second year student at University College Utrecht. 
-								I am interested in the application of GIS and remote sensing techniques mostly for environmental analysis, as
-								this is my academic area of focus. I was born in Tarapoto,Peru and grew up in the Hague, The Netherlands, so 
-								I decided to focus on these regions for a few of the GIS projects. This course was a great opportunity to learn 
-								about the many possibilities of GIS, and I am excited to show you my progress in this field so far.
-							</p>
+								<p>
+									My name is Malou Veen van Wolfswinkel and I am currently a second year student at University College Utrecht.   
+									I am interested in the application of GIS and remote sensing techniques mostly for environmental analysis, as  
+									this is my academic area of focus. I was born in Tarapoto (Peru) and grew up in the Hague (The Netherlands), so   
+									I decided to focus on these regions for a few of the GIS projects. This course was a great opportunity to learn   
+									about the many possibilities of GIS, and I am excited to show you my progress in this field so far.  <br><br>
+
+									<i>Contact: malouveen@gmail.com</i>
+								</p>
+							</div>
 
 						</div>
 					</section>
@@ -95,11 +167,12 @@
 							<div class="row">
 								<div class="col-4 col-12-mobile">
 									<article class="item">
-										<a href="1_choropleth_map.html" class="image fit"><img src="images/pic02.png" alt="" /></a>
+										<a href="1_choropleth_map.html" class="image fit"><img src="images/1_map_combined.png" alt="" /></a>
 										<header>
 											<h3>
 												<a href="1_choropleth_map.html">1. Choropleth Map</a>
 											</h3>
+											<p>Ilustrating global access to safe drinking water services, using UN public data.</p>
 										</header>
 									</article>
 									<article class="item">
@@ -108,6 +181,7 @@
 											<h3>
 												<a href="4_vegetation_indices_embedded.html">4. Vegetation Indices</a>
 											</h3>
+											<p>Measuring the level of health of vegetation in the region of the Huallaga river in Peru, using cloudess orthomosaics.</p>
 										</header>
 									</article>
 								</div>
@@ -118,6 +192,7 @@
 											<h3>
 												<a href="2_vector_data.html">2. Vector Data</a>
 											</h3>
+											<p>Applying vector data analysis techniques to spatially visualize the accessibility of playground swings in the Hague, and the perception of greenness in Utrecht. </p>
 										</header>
 									</article>
 									<article class="item">
@@ -126,6 +201,7 @@
 											<h3>
 												<a href="5_land_use.html">5. Land Use Classification</a>
 											</h3>
+											<p>Classifying land cover in the region of the city of Utrecht, using three classification techniques.</p>
 										</header>
 									</article>
 								</div>
@@ -136,6 +212,7 @@
 											<h3>
 												<a href="3_digital_elevation.html">3. Digital Elevation Models</a>
 											</h3>
+											<p>Comparing the current elevation model of a section of the Rhine-Meuse delta to an old map from 1790, using public digital elevation models.</p>
 										</header>
 									</article>
 									<article class="item">
@@ -144,6 +221,7 @@
 											<h3>
 												<a href="6_multi_criteria_analysis.html">6. Multicriteria Analysis</a>
 											</h3>
+											<p>Conceptualizing the process of a Multi Criteria Analysis (MCA), by designing a MCA workflow for a suitability analysis of locations in the Netherlands for the installation of floating solar panels. </p>
 										</header>
 									</article>
 								</div>

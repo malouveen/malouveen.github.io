@@ -32,6 +32,7 @@
         <nav id="nav">
           <ul>
             <li><a href="index.html#top"><span class="icon solid fa-home">Home</span></a></li>
+            <li><a href="index.html#introduction"><span class="icon solid fa-book">Introduction</span></a></li>
             <li><a href="index.html#about"><span class="icon solid fa-user">About Me</span></a></li>
             <li><a href="index.html#portfolio"><span class="icon solid fa-th">Portfolio</span></a></li>
           </ul>
@@ -58,11 +59,11 @@
             </div>
 
             <div class="meta-item">
-              Skill 2
+              Criteria weighting
             </div>
 
             <div class="meta-item">
-              Skill 3
+              Canva
             </div>
           </div>
 
@@ -88,7 +89,7 @@
                 <i>What is multicriteria analysis?</i>
                 <p>
                   Multicriteria analysis (MCA) is a decision-making framework suited for solving problems in which multiple, often conflicting, criteria need to be considered. 
-                  The general steps taken in this systematic approach are illustrated in figure 1. <br><br>
+                  The general steps taken in this systematic approach are illustrated in figure 1 (Collidu, n.d.) <br><br>
 
                   Consider the example of buying a new car. The future buyer could apply a MCA to make this important decision. Within the first step of the MCA process, the current situation, 
                   key players and stakeholder in the decision making process are determined. The key player in our example is the buyer. Next, we identify the various alternative solutions to the
@@ -96,7 +97,7 @@
                    clear measure to compare the effects or value of an option. For the buyer the criteria may be price, fuel efficiency, environmental impact, or brand reputation. After this, each criteria 
                    is weighed to reflect their relative importance. This weight indicates the difference between options and how much that difference matters. If all the alternatives differ in price by 50 euros,
                     the ‘ price’ criterion will not be weighed heavily, it will be of low importance. In the fifth step the weights are averaged, resulting in the values for each option. Each option is then evaluated 
-                    based on these values, resulting in a ranking. The best option will have the highest total value.
+                    based on these values, resulting in a ranking. The best option will have the highest total value (Government Analysis Function, 2023) (Janse, 2026).
                 </p>
                 <div style="
                   width: 100%;
@@ -116,7 +117,7 @@
                 <p>
                   In the context of geoscience, problems or decisions include many different variables or aspects that need to be considered, so MCA can be used to rank different solutions! GIS often deals with different 
                   layers of spatial data such as land use, soil type, or elevation. This makes MCA valuable in GIS, as it allows the integration of multiple spatial factors and criteria to identify optimal locations or 
-                  solutions for planning, resource management, and decision-making. Thus, MCA makes it possible to go from bulks of raw data to a supported policy decision. <br><br>
+                  solutions for planning, resource management, and decision-making. Thus, MCA makes it possible to go from bulks of raw data to a supported policy decision (Elsevier, n.d.). <br><br>
 
                   Types of questions answered by MCA in GIS can concern the suitability of locations for specific land uses, the prioritization of areas for conservation or development, or the assessment of environmental impacts. 
                   Examples include:
@@ -135,27 +136,26 @@
                   water autorities, grid operators, environmental organizations, and local communities each have different priorities wich need to be balences in order to make complex decisions.
                   The decision of where to instal such floating solar parks is complex, as the different objectives and criteria often conflix and need to be weighed against each other. For example,
                   a technically ideal location may be rejected by the local community due to its recreational value.
-                  Thus, the goal of this MCA is to identify the most suitable locations for floating solar parks in the Netherlands, taking into account various criteria that affect their feasibility and impact.
+                  Thus, the goal of this MCA is to identify the most suitable locations for floating solar parks in the Netherlands, taking into account various criteria that affect their feasibility and impact (World Bank Group et al., 2019).
                 </p>
 
-                <i>The MCA approach</i>
+                <u>The MCA approach</u>
                 <p>
-                  The question that this MCA aims to answer is: 
-                </p>
+                  The aim of this Multi-Criteria Analysis (MCA) is to answer the following question:                </p>
 
                 <h4>Which bodies of water in the Netherlands are most suitable for floating solar parks?</h4>
 
                 <p>
                   The suitability of a body of water for floating solar parks depends on multiple factors. For this analysis, I consider various criteria which are relevant from a physical, environmental, and economical perspective. 
                   The following criteria are considered, and their contribution to the suitability is noted.
-                  <li>water depth (most suitable at mid-range depths)</li>
-                  <li>surface area (increases suitability)</li>
-                  <li>water body type (closed body type increases suitability)</li>
-                  <li>water flow velocity (decreases suitability)</li>
-                  <br><br>
-                  <u>Infrastructure</u>
-                  <li>Distance to grid connection (decreases suitability)</li>
-                  <li>Proximity to protected areas (decreases suitability)</li>
+                  <ul>
+                    <li>Water depth: moderate depths are most suitable for anchoring and maintance.</li>
+                    <li>Surface area: large bodies are suitable for generating large amounts of electricity</li>
+                    <li>Water body type: closed bodies are suitable for stable conditions</li>
+                    <li>Water flow velocity: low flow velocity is suitable for low reducing stress on the floating installation</li>
+                    <li>Distance to grid connection: locations close to existing grid connections are more suitable</li>
+                    <li>Proximity to protected areas: locations far from protected areas are more suitable to prevent environmental impacts.</li>
+                  </ul>
 
                 These criteria are important because they each affect the feasibility, efficiency, and environmental impact of floating solar parks. 
                 For example, water depth affects the stability and anchoring of the solar panels, while surface area affects the potential energy output. 
@@ -166,23 +166,64 @@
                 panels, but usualy such water bodies are located in close proximity to protected areas. <br><br>
                 </p>
 
-                <i>The Data</i>
+                <u>The Data</u><br>
                 For this MCA, many datasets would be needed. The following GIS layers would be required:
-                <li>Bathymetry: for assessing water depth</li>
-                <li>BGT: for assessing the size of the water body</li>
-                <li>A dataset for water body type and flow velocity</li>
-                <li>Enexis: for assessing the distance to the nearest grid connection</li>
-                <li>NNN: for identifying areas with environmental restrictions</li>
+                <ul>
+                  <li>Bathymetry: for assessing water depth (EMODnet Bathymetry Consortium, n.d.)</li>
+                  <li>BGT: for assessing the size of the water body (PDOK, n.d.)</li>
+                  <li>A dataset for water body type and flow velocity</li>
+                  <li>Enexis: for assessing the distance to the nearest grid connection (Enexis Netbeheer, n.d.)</li>
+                  <li>NNN: for identifying areas with environmental restrictions (PDOK, n.d.)</li>
+                </ul>
 
-                <i>The workflow</i>
+                <u>The Workflow</u>
+                <div style="
+                  width: 100%;
+                  margin: 2rem 0;
+                ">
 
-                <i>The Main Findings</i>
+                  <img src="images/6_workflow.png" 
+                      alt="Elevation map"
+                      style="
+                      width: 100%;
+                      border-radius: 15px;
+                      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+                ">
+                </div>
+
+                <h3>The Main Findings </h3>
+                <p>
+                  The figure above graphically illustrates the MCA workflow to find suitable locations for floating solar panels in the Netherlands. The criteria are described and which datasets can be used to quantify these. 
+                  The data sources are managed and provided by a different group of people from a different field of work. This indicates that solving it requires the collaboration of different disciplines. While MCA is a tool
+                  which will contribute the decision-making process, it also helps structuring this complex process of interdisciplinary collaboration. Not only does each stakeholder have different values, requirements and preferences, 
+                  but the data is collected in varying units and standardizations. Besides this, choices need to be made in favour of one criterion while negatively affecting another. These trade-offs and the discussions around them can 
+                  take a lot of time. All in all, considering different criteria with each their own stakeholders, units, and preferences and combining this into one decision is very challenging, but a multi-criteria analysis creates a 
+                  structured approach, making the decision process just a little easier. 
+                </p>
+
                 <h3>Reflection</h3>
                 <p>
-                  NO CONFUSION MATRIX
-                  This assignment showed me the potential of publcly available data. I enjoyed visuaizing the elevation of a place I am familiar with, and comparing it to a map of almost 240 years old. 
+                  This assignment helped me realise that a multi-criteria analysis is more complex than it seems. When the criteria are presented, the analysis seems quite straightforward. When determining the criteria myself, I realised 
+                  how many things need to be taken into consideration when it comes to the suitability of a location for a floating solar panel installation. There are criteria that I did not incorporate, such as economic viability, public 
+                  perception, policy restriction, competing water use, subsidy opportunities, and many more. Note that the tools I mentioned in my workflow are not the only options. ArcGIS could be used instead of QGIS and excel can be 
+                  replaced by many applications. <br><br>
 
-                  Discussion: also consider competing water use (shipping, recreation, fisheries)
+                  Finally, I did not consider the bureaucratic aspect of such an analysis. Many different people need to work together to achieve a decision, which can be very inefficient and frustrating at times. I can already imagine how many meetings 
+                  will be necessary for each stakeholder to be content with the decision. MCA is a good tool to make the process more objective and data based.  
+
+                </p>
+
+                <h3>References</h3>
+                <p>
+                Collidu. (n.d.). Multi-criteria decision. <a href="https://www.collidu.com/presentation-multi-criteria-decision">https://www.collidu.com/presentation-multi-criteria-decision</a> <br><br>
+                Elsevier. (n.d.). Multicriteria analysis. ScienceDirect Topics. <a href="https://www.sciencedirect.com/topics/earth-and-planetary-sciences/multicriteria-analysis">https://www.sciencedirect.com/topics/earth-and-planetary-sciences/multicriteria-analysis</a> <br><br>
+                EMODnet Bathymetry Consortium. (n.d.). EMODnet bathymetry. <a href="https://emodnet.ec.europa.eu/en/bathymetry">https://emodnet.ec.europa.eu/en/bathymetry</a> <br><br>
+                Enexis Netbeheer. (n.d.). Enexis Netbeheer. <a href="https://www.enexis.nl/">https://www.enexis.nl/</a> <br><br>
+                Government Analysis Function. (2023). An introductory guide to multi-criteria decision analysis (MCDA). <a href="https://analysisfunction.civilservice.gov.uk/policy-store/an-introductory-guide-to-mcda/">https://analysisfunction.civilservice.gov.uk/policy-store/an-introductory-guide-to-mcda/</a> <br><br>
+                Janse, B. (2026, May 1). Multicriteria analyse (MCA): Uitleg plus voorbeeld. Toolshero. <a href="https://www.toolshero.nl/besluitvorming/multicriteria-analyse-mca/">https://www.toolshero.nl/besluitvorming/multicriteria-analyse-mca/</a> <br><br>
+                PDOK. (n.d.). Natuurnetwerk Nederland (NNN) – Provincies (INSPIRE geharmoniseerd). <a href="https://www.pdok.nl/introductie/-/article/natuurnetwerk-nederland-nnn-">https://www.pdok.nl/introductie/-/article/natuurnetwerk-nederland-nnn-</a> <br><br>
+                PDOK. (n.d.). Basisregistratie Grootschalige Topografie (BGT). <a href="https://www.pdok.nl/introductie/-/article/basisregistratie-grootschalige-topografie-bgt-">https://www.pdok.nl/introductie/-/article/basisregistratie-grootschalige-topografie-bgt-</a> <br><br>
+                World Bank Group, Energy Sector Management Assistance Program (ESMAP), &amp; Solar Energy Research Institute of Singapore (SERIS). (2019). Where sun meets water: Floating solar handbook for practitioners. World Bank. <a href="https://documents1.worldbank.org/curated/en/418961572293438109/pdf/Where-Sun-Meets-Water-Floating-Solar-Handbook-for-Practitioners.pdf">https://documents1.worldbank.org/curated/en/418961572293438109/pdf/Where-Sun-Meets-Water-Floating-Solar-Handbook-for-Practitioners.pdf</a> <br><br>
                 </p>
               </div>
             </div>
@@ -204,11 +245,9 @@
               <h3>Software & Tools</h3>
               <ul>
                 <li>QGIS</li>
-                <li>ArcGIS Pro</li>
-                <li>Spectral Profile</li>
-                <li>QuickMapServices</li>
-                <li>Google Earth Engine</li>
-                <li>Python</li>
+                <li>Excel</li>
+                <li>Canva</li>
+
               </ul>
             </div>
           </div>

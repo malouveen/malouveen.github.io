@@ -2779,3 +2779,28 @@ input, select, textarea {
   gap: 10px; /* smaller gap = wider feel */
   margin: 20px 0;
 }
+
+.item header p {
+    margin: 0.5em 1em 1em;
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+.about-flex {
+  display: flex;
+  align-items: flex-start; /* aligns with top of text */
+  gap: 15px;
+}
+
+.about-img {
+  height: 75px;   /* same height as text */
+  width: auto;
+  border-radius: 50%; /* optional */
+  margin-top: 0.2em; /* small tweak for alignment */
+}
+
+.about-flex p {
+  margin: 0;
+}
