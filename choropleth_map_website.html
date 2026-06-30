@@ -42,6 +42,12 @@
 			margin-bottom:5rem;
 			box-shadow:var(--shadow);
     	}
+		.page-container {
+			max-width: 1000px;   /* controls page width */
+			margin: 0 auto;      /* centers it horizontally */
+			padding: 0 25px;     /* adds space left & right */
+		}
+
 		
 
 	</style>
@@ -51,192 +57,196 @@
 .legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }</style>
 </head>
 <body>
-	
-<h1 style="text-align:center;color:#2c3f48;">	
-	<b>SDG 6</b> <br>
-</h1>
+<div class="page-container">
+		
 
-<h1 style="text-align:center;color:#2c3f48;">	
-Ensure availability and sustainable management of water and sanitation for all. <br><br> 
-</h1>
+	<h1 style="text-align:center;color:#2c3f48;">	
+		<b>SDG 6</b> <br>
+	</h1>
 
-<h3 style="text-align:center;color:#2c3f48;">	
-<b>SDG Target 6.1: </b> By 2030, achieve universal and equitable access to safe and affordable drinking water for all.
-</h3>
-<br>
+	<h1 style="text-align:center;color:#2c3f48;">	
+	Ensure availability and sustainable management of water and sanitation for all. <br><br> 
+	</h1>
 
-<p>Author: Malou Veen van Wolfswinkel</p><br>
+	<h3 style="text-align:center;color:#2c3f48;">	
+	<b>SDG Target 6.1: </b> By 2030, achieve universal and equitable access to safe and affordable drinking water for all.
+	</h3>
+	<br>
 
-<h3 style="text-align:center;color:#2c3f48;">
-	<p>Choropleth map of global accesbility to safe water</p>
-</h3>
+	<p>Author: Malou Veen van Wolfswinkel</p><br>
 
-
-<div id="map" style="
-    width:90%;
-    height:700px;
-    margin:auto;
-    border-radius:15px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.2);">
-</div>
-
-<h4>Introduction</h4>
-<p>The choropleth map above was created using UN data on the 6th Sustainable Development Goal, summarized as <br>
-“Ensure availability and sustainable management of water and sanitation for all”<br><br>
-
-Specifically, it focuses on SDG target 6.1, concerning the progress on drinking water. <br>
- ‘By 2030, achieve universal and equitable access to safe and affordable drinking water for all.’<br><br>
-To track progress towards the target, indicator 6.1.1 monitors the proportion of population using safely managed drinking water services. Each country has one value for this indicator. The metadata can be found here.<br>
-<a href="https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf"> https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf </a> <br><br>
-
-Note that we must remain critical of the indicators used. Not only are these values averaged over an entire country, but the indicator itself can also be criticized. Indicator 6.1.1 focusses on the accessibility to safe and affordable drinking water services. Services could include piped water or protected wells, which does not fully account for water quality at home. The sources can additionally be contaminated, which is not always tested or reflected in the indicator. Another criticism is the lack of long-term access measurement. In this case, the indicator focusses on current access, without considering the long-term sustainability of sources (groundwater depletion, climate change impacts, etc).
-
-<h4>Map description</h4>
-<p>
-	The choropleth map illustrates these proportions, using colours for different ranges of percentages. Thus, a dark shade of blue indicates a high proportion of population using safely managed drinking water services, while a dark red indicates a low proportion. The map above depicts a population proportion with access to safe drinking water lower than 25% in Chad, Sierra Leone, Kiribati, Nepal, Democratic republic of Congo and Central African Republic. <br><br>
-	While the assignment instructed to take the highest percentages of the indicator, I found it more interesting to look at the lower percentages. As a lack of accessibility to safe drinking water is a problem, a user of this map is able to identify the critical regions in need of improvement. 
-</p>
-
-<h4>What is a Choropleth map</h4>
-<p>
-	Generally speaking, a choropleth map is a type of thematic map used to represent data through the shading or colouring of predefined geographic area (4. geoapify). Each area is coloured in proportion to the value of the variable being represented. You can recognise such a map by its distinct geographic regions, each filled evenly with a colour. When a colour gradient is used, the darkest shades indicate the highest values. <br><br>
-	A benefit of choropleth maps is that they are familiar to most users, making the data easy to understand. Besides this, the colour differences can highlight differences and similarities across regions or hotspots. Thus, users can quicky detect patterns and trends within a dataset. For example, the map shown above clearly shows a group of countries in Africa with very low percentages. Besides this, the geographic areas can be at any scale, and thus at many levels of analysis.<br><br>
-	A disadvantage of choropleth maps can be the lack of detailed area-specific information. To work around this, the map above is made interactive, making it possible to see each countries’ exact percentage. Such a map is also limited to one variable, so a combined analysis may be necessary. Misinterpretation is a large pitfall of the choropleth maps. Big differences in the area sizes can lead to misinterpretations. Moreover, the abrupt change at the boundaries of countries can give false impressions. Gradual changes over space (such as temperatures) are not visualised well using choropleth maps. Alternative maps may be used to visualise this spatial change (see assignment 2). Finally, as each indicator is one value for an entire country, disparities within a country are not visualized, resulting in marginalized groups (rural communities, low-income households, indigenous populations, etc) possible not being represented well (source 5). 
-<p>
-
-<h4>Technical Skills Gained</h4>
-	<p>This was the very first map I made with QGIS! Most importantly, making this map introduced me to the QGIS software. Important skills that I acquired throughout the process were data cleaning, joining layers, selecting certain values within the data, labelling, and layout styling. Specifically the data joining was a challenge. As visible in the interactive map at the top of this page, many countries are ‘missing data’. However, when joining the location and attribute data using other variables, different countries were ‘missing data’. The attribute data set contained values for almost all countries, but the joining did not carry all of them through. Thus, the map below visualized the two joining methods (once with M49 and area codes, once with M49 as integers and area codes), stacked on top of each other. It is important to note that the colours of both joining methods was done using the ‘pretty breaks’ and thus a few countries have different colours than in the first map. The second map is far from perfect, but making it taught me a lot about the importance of the choice of variables used in joining attribute and location data.</p>
-
-<h4>References</h4>
-- https://sdgs.un.org/goals/goal6<br>
-- https://sdg6data.org/en/indicator/6.1.1<br>
-- https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf<br>
-- https://www.geoapify.com/what-is-a-choropleth-map-definition-examples-how-to-create/<br>
-- https://digitalcommons.unomaha.edu/cgi/viewcontent.cgi?article=1199&context=datausers<br>
-
-<script type="text/javascript" src="Safe_Drinking_Water_2024.js"></script>
-<script type="text/javascript">
-
-	const map = L.map('map').setView([10, 10], 2);
-
-//UPDATE above - notice the SDG15v3.js file - that is my geometry file - replace that file with your own!
-//call the basemap you want to use
-	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		maxZoom: 19,
-		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-	}).addTo(map);
-
-	// control that shows attribute info on hover
-	const info = L.control();
-
-	info.onAdd = function (map) {
-		this._div = L.DomUtil.create('div', 'info');
-		this.update();
-		return this._div;
-	};
-
-		//UPDATE to call your own data for the interactivity- the name after "props" is the attribute name - look in your js file to find the attribute to call
-		// change class breaks and color depending on your values 
-		//UPDATE for our own legend - use colorbrewer.org for ideas for colors
-		//UPDATE legend to match the classes you coded - and the source of your data needs to reference the correct link
-	info.update = function (props) {
-		const contents = props ? `<b>${props.nam_en}</b><br />${props.SDG_Field} % of population with access to safely managed drinking water services` : 'Hover over a state';
-		this._div.innerHTML = `<h4>6.1.1 Proportion of population using safely managed drinking water services</h4>${contents}`;
-	};
-
-	info.addTo(map);
+	<h3 style="text-align:center;color:#2c3f48;">
+		<p>Choropleth map of global accesbility to safe water</p>
+	</h3>
 
 
-	
-	
-	function getColor(d) {
-		return d > 100 ? '#2c7bb6' :
-			d > 81  ? '#2c7bb6' :
-			d > 64  ? '#abd9e9' :
-			d > 46  ? '#ffffbf' :
-			d > 28   ? '#fdae61' :
-			d > 0   ? '#d7191c' :
-			d = 0   ? '#bdbdbd' : '#bdbdbd';
-	}
+	<div id="map" style="
+		width:90%;
+		height:700px;
+		margin:auto;
+		border-radius:15px;
+		box-shadow:0 8px 20px rgba(0,0,0,0.2);">
+	</div>
 
-//update the fill color to your variable 
-	function style(feature) {
-		return {
-			weight: 0.5,
-			opacity: 0.8,
-			color: 'black',
-			dashArray: '0',
-			fillOpacity: 0.7,
-			fillColor: getColor(feature.properties.SDG_Field)
+	<h4>Introduction</h4>
+	<p>The choropleth map above was created using UN data on the 6th Sustainable Development Goal, summarized as <br>
+	“Ensure availability and sustainable management of water and sanitation for all”<br><br>
+
+	Specifically, it focuses on SDG target 6.1, concerning the progress on drinking water. <br>
+	‘By 2030, achieve universal and equitable access to safe and affordable drinking water for all.’<br><br>
+	To track progress towards the target, indicator 6.1.1 monitors the proportion of population using safely managed drinking water services. Each country has one value for this indicator. The metadata can be found here.<br>
+	<a href="https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf"> https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf </a> <br><br>
+
+	Note that we must remain critical of the indicators used. Not only are these values averaged over an entire country, but the indicator itself can also be criticized. Indicator 6.1.1 focusses on the accessibility to safe and affordable drinking water services. Services could include piped water or protected wells, which does not fully account for water quality at home. The sources can additionally be contaminated, which is not always tested or reflected in the indicator. Another criticism is the lack of long-term access measurement. In this case, the indicator focusses on current access, without considering the long-term sustainability of sources (groundwater depletion, climate change impacts, etc).
+
+	<h4>Map description</h4>
+	<p>
+		The choropleth map illustrates these proportions, using colours for different ranges of percentages. Thus, a dark shade of blue indicates a high proportion of population using safely managed drinking water services, while a dark red indicates a low proportion. The map above depicts a population proportion with access to safe drinking water lower than 25% in Chad, Sierra Leone, Kiribati, Nepal, Democratic republic of Congo and Central African Republic. <br><br>
+		While the assignment instructed to take the highest percentages of the indicator, I found it more interesting to look at the lower percentages. As a lack of accessibility to safe drinking water is a problem, a user of this map is able to identify the critical regions in need of improvement. 
+	</p>
+
+	<h4>What is a Choropleth map</h4>
+	<p>
+		Generally speaking, a choropleth map is a type of thematic map used to represent data through the shading or colouring of predefined geographic area (4. geoapify). Each area is coloured in proportion to the value of the variable being represented. You can recognise such a map by its distinct geographic regions, each filled evenly with a colour. When a colour gradient is used, the darkest shades indicate the highest values. <br><br>
+		A benefit of choropleth maps is that they are familiar to most users, making the data easy to understand. Besides this, the colour differences can highlight differences and similarities across regions or hotspots. Thus, users can quicky detect patterns and trends within a dataset. For example, the map shown above clearly shows a group of countries in Africa with very low percentages. Besides this, the geographic areas can be at any scale, and thus at many levels of analysis.<br><br>
+		A disadvantage of choropleth maps can be the lack of detailed area-specific information. To work around this, the map above is made interactive, making it possible to see each countries’ exact percentage. Such a map is also limited to one variable, so a combined analysis may be necessary. Misinterpretation is a large pitfall of the choropleth maps. Big differences in the area sizes can lead to misinterpretations. Moreover, the abrupt change at the boundaries of countries can give false impressions. Gradual changes over space (such as temperatures) are not visualised well using choropleth maps. Alternative maps may be used to visualise this spatial change (see assignment 2). Finally, as each indicator is one value for an entire country, disparities within a country are not visualized, resulting in marginalized groups (rural communities, low-income households, indigenous populations, etc) possible not being represented well (source 5). 
+	<p>
+
+	<h4>Technical Skills Gained</h4>
+		<p>This was the very first map I made with QGIS! Most importantly, making this map introduced me to the QGIS software. Important skills that I acquired throughout the process were data cleaning, joining layers, selecting certain values within the data, labelling, and layout styling. Specifically the data joining was a challenge. As visible in the interactive map at the top of this page, many countries are ‘missing data’. However, when joining the location and attribute data using other variables, different countries were ‘missing data’. The attribute data set contained values for almost all countries, but the joining did not carry all of them through. Thus, the map below visualized the two joining methods (once with M49 and area codes, once with M49 as integers and area codes), stacked on top of each other. It is important to note that the colours of both joining methods was done using the ‘pretty breaks’ and thus a few countries have different colours than in the first map. The second map is far from perfect, but making it taught me a lot about the importance of the choice of variables used in joining attribute and location data.</p>
+
+	<h4>References</h4>
+	- https://sdgs.un.org/goals/goal6<br>
+	- https://sdg6data.org/en/indicator/6.1.1<br>
+	- https://unstats.un.org/sdgs/metadata/files/Metadata-06-01-01.pdf<br>
+	- https://www.geoapify.com/what-is-a-choropleth-map-definition-examples-how-to-create/<br>
+	- https://digitalcommons.unomaha.edu/cgi/viewcontent.cgi?article=1199&context=datausers<br>
+
+	<script type="text/javascript" src="Safe_Drinking_Water_2024.js"></script>
+	<script type="text/javascript">
+
+		const map = L.map('map').setView([10, 10], 2);
+
+	//UPDATE above - notice the SDG15v3.js file - that is my geometry file - replace that file with your own!
+	//call the basemap you want to use
+		const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			maxZoom: 19,
+			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+		}).addTo(map);
+
+		// control that shows attribute info on hover
+		const info = L.control();
+
+		info.onAdd = function (map) {
+			this._div = L.DomUtil.create('div', 'info');
+			this.update();
+			return this._div;
 		};
-	}
 
-	function highlightFeature(e) {
-		const layer = e.target;
+			//UPDATE to call your own data for the interactivity- the name after "props" is the attribute name - look in your js file to find the attribute to call
+			// change class breaks and color depending on your values 
+			//UPDATE for our own legend - use colorbrewer.org for ideas for colors
+			//UPDATE legend to match the classes you coded - and the source of your data needs to reference the correct link
+		info.update = function (props) {
+			const contents = props ? `<b>${props.nam_en}</b><br />${props.SDG_Field} % of population with access to safely managed drinking water services` : 'Hover over a state';
+			this._div.innerHTML = `<h4>6.1.1 Proportion of population using safely managed drinking water services</h4>${contents}`;
+		};
 
-		layer.setStyle({
-			weight: 2,			// change thickness of outline
-			color: '#777',
-			dashArray: '',
-			fillOpacity: 0.9
-		});
-
-		layer.bringToFront();
-
-		info.update(layer.feature.properties);
-	}
-
-	/* global statesData */ //UPDATE nationData
-	const geojson = L.geoJson(nationData, {
-		style,
-		onEachFeature
-	}).addTo(map);
-
-	function resetHighlight(e) {
-		geojson.resetStyle(e.target);
-		info.update();
-	}
-
-	function zoomToFeature(e) {
-		map.fitBounds(e.target.getBounds());
-	}
-
-	function onEachFeature(feature, layer) {
-		layer.on({
-			mouseover: highlightFeature,
-			mouseout: resetHighlight,
-			click: zoomToFeature
-		});
-	}
-
-	map.attributionControl.addAttribution('SDG data &copy; <a href="https://unstats-undesa.opendata.arcgis.com/">UN SDG DataHub</a>');
+		info.addTo(map);
 
 
-
-	const legend = L.control({position: 'bottomleft'});
-
-	legend.onAdd = function (map) {
-
-		const div = L.DomUtil.create('div', 'info legend');
-		const grades = [0, 28, 46, 64, 81];
-		const labels = [];
-		let from, to;
-
-		for (let i = 0; i < grades.length; i++) {
-			from = grades[i];
-			to = grades[i + 1];
-
-			labels.push(`<i style="background:${getColor(from + 1)}"></i> ${from}${to ? `&ndash;${to}` : '+'}`);
+		
+		
+		function getColor(d) {
+			return d > 100 ? '#2c7bb6' :
+				d > 81  ? '#2c7bb6' :
+				d > 64  ? '#abd9e9' :
+				d > 46  ? '#ffffbf' :
+				d > 28   ? '#fdae61' :
+				d > 0   ? '#d7191c' :
+				d = 0   ? '#bdbdbd' : '#bdbdbd';
 		}
 
-		labels.push(`<i style="background:#bdbdbd"></i>  No Data`);
+	//update the fill color to your variable 
+		function style(feature) {
+			return {
+				weight: 0.5,
+				opacity: 0.8,
+				color: 'black',
+				dashArray: '0',
+				fillOpacity: 0.7,
+				fillColor: getColor(feature.properties.SDG_Field)
+			};
+		}
 
-		div.innerHTML = labels.join('<br>');
-		return div;
-	};
+		function highlightFeature(e) {
+			const layer = e.target;
 
-	legend.addTo(map);
+			layer.setStyle({
+				weight: 2,			// change thickness of outline
+				color: '#777',
+				dashArray: '',
+				fillOpacity: 0.9
+			});
 
-</script>
+			layer.bringToFront();
+
+			info.update(layer.feature.properties);
+		}
+
+		/* global statesData */ //UPDATE nationData
+		const geojson = L.geoJson(nationData, {
+			style,
+			onEachFeature
+		}).addTo(map);
+
+		function resetHighlight(e) {
+			geojson.resetStyle(e.target);
+			info.update();
+		}
+
+		function zoomToFeature(e) {
+			map.fitBounds(e.target.getBounds());
+		}
+
+		function onEachFeature(feature, layer) {
+			layer.on({
+				mouseover: highlightFeature,
+				mouseout: resetHighlight,
+				click: zoomToFeature
+			});
+		}
+
+		map.attributionControl.addAttribution('SDG data &copy; <a href="https://unstats-undesa.opendata.arcgis.com/">UN SDG DataHub</a>');
+
+
+
+		const legend = L.control({position: 'bottomleft'});
+
+		legend.onAdd = function (map) {
+
+			const div = L.DomUtil.create('div', 'info legend');
+			const grades = [0, 28, 46, 64, 81];
+			const labels = [];
+			let from, to;
+
+			for (let i = 0; i < grades.length; i++) {
+				from = grades[i];
+				to = grades[i + 1];
+
+				labels.push(`<i style="background:${getColor(from + 1)}"></i> ${from}${to ? `&ndash;${to}` : '+'}`);
+			}
+
+			labels.push(`<i style="background:#bdbdbd"></i>  No Data`);
+
+			div.innerHTML = labels.join('<br>');
+			return div;
+		};
+
+		legend.addTo(map);
+
+	</script>
+</div>
+
 </body>
 </html>
